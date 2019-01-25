@@ -5,7 +5,7 @@
 \title{interactive thresholding}
 \usage{
 interactive_threshold(image, type = c("black", "white"),
-  channel = NULL, scale = 1, return_thr = FALSE)
+  channel = NULL, scale = 1, resolution = 0.1, return_thr = FALSE)
 }
 \arguments{
 \item{image}{a magick image object}
@@ -15,6 +15,8 @@ interactive_threshold(image, type = c("black", "white"),
 \item{channel}{a value specifying which channel(s) to set}
 
 \item{scale}{scale factor for size of image shown in plot. scale does not affect result.}
+
+\item{resolution}{specifying resolution of slider. must be positive.}
 
 \item{return_thr}{if TRUE, returns threshold value. if FALSE, returns magick image object.}
 }

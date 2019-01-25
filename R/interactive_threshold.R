@@ -6,6 +6,7 @@
 #' @param type type of thresholding, either one of lat, black or white
 #' @param channel a value specifying which channel(s) to set
 #' @param scale scale factor for size of image shown in plot. scale does not affect result.
+#' @param resolution specifying resolution of slider. must be positive.
 #' @param return_thr if TRUE, returns threshold value. if FALSE, returns magick image object.
 #' @return magick a image object or threshold value
 #' @author Shota Ochi
@@ -15,15 +16,20 @@
 #' interactive_threshold(wizard)
 #' }
 
-interactive_threshold <- function(image, type = c("black", "white"), channel = NULL, scale = 1, return_thr = FALSE)
+interactive_threshold <- function(image, type = c("black", "white"), channel = NULL, scale = 1, resolution = 0.1, return_thr = FALSE)
 {
   # make initial output
   iniv <- "0"
   initial <- image_threshold(image, type = type, threshold = paste(iniv, "%", sep = ""), channel = channel)
 
   # set variable range
-  range_thr <- c(0,100) # threshold of image_threshold is a percentage.
-
+  range_thr <- c(0,100)                               # threshold of image_threshold is a percentage.
+  length_slider <- 200 * scale                        # length of slider
+  digits <- log(resolution, 10)
+  digits <- ifelse(digits < 0, -digits, 0)            # digits of resolution
+  text_label <- "Threshold: "                         # text shown in label
+  quit_waiting <- FALSE
+  
   # configure widgets
   win1 <- tktoplevel()
   on.exit(tkdestroy(win1))
@@ -33,7 +39,11 @@ interactive_threshold <- function(image, type = c("black", "white"), channel = N
   }
   win1.im <- tkrplot(win1, fun = im_tcl(iniv), hscale = scale, vscale = scale)
   tkpack(win1.im)
-  text_label <- "Threshold: "
+  format_val <- function(val)
+  {
+    res <- as.numeric(val)
+    
+  }
   win1.label <- tklabel(win1, text = sprintf("%s%s %%", text_label, iniv))
   tkpack(win1.label, side = "top", anchor = "c")
   slider_value <- tclVar(iniv)
@@ -41,9 +51,8 @@ interactive_threshold <- function(image, type = c("black", "white"), channel = N
   {
     assign("slider_value", slider_value, inherits = TRUE)
   }
-  length_slider <- 200 * scale
-  win1.slider <- tkscale(win1, from = range_thr[1], to = range_thr[2], variable=slider_value, orient="horizontal", length=length_slider, command=command_slider)
-  quit_waiting <- FALSE
+
+  win1.slider <- tkscale(win1, from = range_thr[1], to = range_thr[2], variable = slider_value, orient = "horizontal", length = length_slider, command = command_slider, resolution = resolution, digits = digits)
   command_button <- function(...)
   {
     assign("quit_waiting", TRUE, inherits = TRUE)
