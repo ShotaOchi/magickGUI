@@ -1,5 +1,8 @@
 # magickGUI
 
+[![CRAN Version](https://www.r-pkg.org/badges/version/magickGUI)](https://cran.r-project.org/package=magickGUI)
+[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
+
 ## Purpose
 The purpose of magickGUI is to enable us to use the functions of the package 'magick' interactively.
 
