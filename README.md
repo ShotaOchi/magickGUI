@@ -21,6 +21,7 @@ interactive_threshold(rose)
 
 ## Naming Rule
 Just replace "image" with "interactive".
+
 For example, image_threshold function &rarr; interactive_threshold.
 
 ## Contribution
