@@ -1,0 +1,24 @@
+Package: magickGUI
+Type: Package
+Title: GUI Tools for Interactive Image Processing with 'magick'
+Version: 0.1.0
+Authors@R: c(
+    person("Shota", "Ochi", email = "shotaochi1990@gmail.com", role = c("aut", "cre")))
+Maintainer: Shota Ochi <shotaochi1990@gmail.com>
+Description: Enables us to use the functions of the package 'magick' interactively.
+License: LGPL-3
+Depends: 
+    R (>= 3.1.2),
+    magick (>= 2.0)
+Imports: 
+    tkrplot,
+    tcltk
+Suggests: 
+    testthat (>= 2.0.0),
+    knitr,
+    rmarkdown
+URL: https://github.com/ShotaOchi/magickGUI
+BugReports: https://github.com/ShotaOchi/magickGUI/issues
+NeedsCompilation: no
+RoxygenNote: 6.1.1
+Encoding: UTF-8
