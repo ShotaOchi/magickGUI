@@ -16,13 +16,14 @@ You can use image_threshold function of 'magick' interactively.
 
 Run the following code.
 ```r
+library(magickGUI)
 interactive_threshold(rose)
 ```
 
 ## Naming Rule
 Just replace "image" with "interactive".
 
-For example, image_threshold function &rarr; interactive_threshold.
+For example, image_threshold &rarr; interactive_threshold.
 
 ## Contribution
 You're welcome to create issues for any bug report or suggestion on the [issues page](https://github.com/ShotaOchi/magickGUI/issues).
