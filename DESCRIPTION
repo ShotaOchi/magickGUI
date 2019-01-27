@@ -6,7 +6,7 @@ Authors@R: c(
     person("Shota", "Ochi", email = "shotaochi1990@gmail.com", role = c("aut", "cre")))
 Maintainer: Shota Ochi <shotaochi1990@gmail.com>
 Description: Enables us to use the functions of the package 'magick' interactively.
-License: LGPL-3
+License: GPL-3
 Depends: 
     R (>= 3.1.2),
     magick (>= 2.0)
