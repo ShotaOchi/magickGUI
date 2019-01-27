@@ -26,6 +26,8 @@ addons:
       - libfftw3-dev
       - cargo
       - r-cran-tkrplot
+      - tcl-dev
+      - tk-dev
 
 bioc_packages:
   - EBImage
