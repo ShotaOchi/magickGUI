@@ -23,9 +23,9 @@ addons:
       - libleptonica-dev
       - tesseract-ocr-eng
       - tesseract-ocr-fra
-
       - libfftw3-dev
       - cargo
+      - r-cran-tkrplot
 
 bioc_packages:
   - EBImage
