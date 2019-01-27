@@ -9,6 +9,12 @@ r:
   - release
   - devel
 
+r_packages:
+  - covr
+
+bioc_packages:
+  - EBImage
+
 before_install:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
@@ -33,5 +39,5 @@ addons:
       - tcl-dev
       - tk-dev
 
-bioc_packages:
-  - EBImage
+after_success:
+  - Rscript -e 'library(covr); codecov()'
