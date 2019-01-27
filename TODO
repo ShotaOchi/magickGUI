@@ -1,3 +1,13 @@
 * add functions
+ ** image_modulate
+ ** image_quantize
+ ** image_contrast
+ ** image_despeckle
+ ** image_reducenoise
+ ** image_blur
+ ** image_charcoal
+ ** image_charcoal
+ ** image_emboss
+ ** image_implode 
 
 * add unit tests
