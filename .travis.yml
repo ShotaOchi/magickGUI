@@ -11,6 +11,9 @@ r:
 
 addons:
   apt:
+    update: true
+    sources:
+      - sourceline: 'ppa:opencpu/imagemagick'
     packages:
       - libmagick++-dev
       - librsvg2-dev
@@ -23,3 +26,6 @@ addons:
       - r-cran-rgdal
       - libfftw3-dev
       - cargo
+
+bioc_packages:
+  - EBImage
