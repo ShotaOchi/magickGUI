@@ -23,7 +23,7 @@ addons:
       - libleptonica-dev
       - tesseract-ocr-eng
       - tesseract-ocr-fra
-      - r-cran-rgdal
+
       - libfftw3-dev
       - cargo
 
