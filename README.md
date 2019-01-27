@@ -1,7 +1,9 @@
 # magickGUI
 
+[![Build Status](https://travis-ci.org/ShotaOchi/magickGUI.svg?branch=master)](https://travis-ci.org/ShotaOchi/magickGUI)
 [![CRAN Version](https://www.r-pkg.org/badges/version/magickGUI)](https://cran.r-project.org/package=magickGUI)
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
+[![codecov](https://codecov.io/gh/ShotaOchi/magickGUI/branch/master/graph/badge.svg)](https://codecov.io/gh/ShotaOchi/magickGUI)
 
 ## Purpose
 The purpose of magickGUI is to enable us to use the functions of the package 'magick' interactively.
