@@ -6,7 +6,7 @@
 #' @param type type of thresholding, either one of lat, black or white
 #' @param channel a value specifying which channel(s) to set
 #' @param scale scale factor for size of image shown in plot. scale does not affect result.
-#' @param resolution specifying resolution of slider. must be positive.
+#' @param resolution resolution of slider
 #' @param return_thr if TRUE, returns threshold value. if FALSE, returns magick image object.
 #' @return magick a image object or threshold value
 #' @author Shota Ochi

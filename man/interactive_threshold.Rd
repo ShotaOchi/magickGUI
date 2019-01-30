@@ -16,7 +16,7 @@ interactive_threshold(image, type = c("black", "white"),
 
 \item{scale}{scale factor for size of image shown in plot. scale does not affect result.}
 
-\item{resolution}{specifying resolution of slider. must be positive.}
+\item{resolution}{resolution of slider}
 
 \item{return_thr}{if TRUE, returns threshold value. if FALSE, returns magick image object.}
 }
