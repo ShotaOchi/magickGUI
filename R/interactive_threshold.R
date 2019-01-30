@@ -28,7 +28,7 @@ interactive_threshold <- function(image, type = c("black", "white"), channel = N
   digits <- log(resolution, 10)
   digits <- ifelse(digits < 0, -digits, 0)            # digits of resolution
   text_label <- "Threshold: "                         # text shown in label
-  quit_waiting <- FALSE
+  quit_waiting <- !is.null(getOption("unit_test_magickGUI"))
   
   # configure widgets
   win1 <- tktoplevel()
