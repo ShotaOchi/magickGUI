@@ -22,7 +22,7 @@ You can use image_threshold function of 'magick' interactively.
 Run the following code.
 ```r
 library(magickGUI)
-interactive_threshold(rose)
+interactive_threshold(wizard)
 ```
 
 ## Naming Rule
