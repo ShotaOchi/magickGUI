@@ -7,7 +7,7 @@
 #' @param channel a value specifying which channel(s) to set
 #' @param scale scale factor for size of image shown in plot. scale does not affect result.
 #' @param resolution resolution of slider
-#' @param return_thr if TRUE, returns threshold value. if FALSE, returns magick image object.
+#' @param return_param if TRUE, returns threshold value. if FALSE, returns magick image object.
 #' @return magick a image object or threshold value
 #' @author Shota Ochi
 #' @export
@@ -16,7 +16,7 @@
 #' interactive_threshold(wizard)
 #' }
 
-interactive_threshold <- function(image, type = c("black", "white"), channel = NULL, scale = 1, resolution = 0.1, return_thr = FALSE)
+interactive_threshold <- function(image, type = c("black", "white"), channel = NULL, scale = 1, resolution = 0.1, return_param = FALSE)
 {
   # make initial output
   iniv <- "0"
@@ -79,7 +79,7 @@ interactive_threshold <- function(image, type = c("black", "white"), channel = N
     }
   }
   val_res <- pre_slider_value
-  if (return_thr)
+  if (return_param)
   {
     return(sprintf("%s%%", formatC(val_res)))
   }

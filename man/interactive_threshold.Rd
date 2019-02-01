@@ -5,7 +5,8 @@
 \title{interactive thresholding}
 \usage{
 interactive_threshold(image, type = c("black", "white"),
-  channel = NULL, scale = 1, resolution = 0.1, return_thr = FALSE)
+  channel = NULL, scale = 1, resolution = 0.1,
+  return_param = FALSE)
 }
 \arguments{
 \item{image}{a magick image object}
@@ -18,7 +19,7 @@ interactive_threshold(image, type = c("black", "white"),
 
 \item{resolution}{resolution of slider}
 
-\item{return_thr}{if TRUE, returns threshold value. if FALSE, returns magick image object.}
+\item{return_param}{if TRUE, returns threshold value. if FALSE, returns magick image object.}
 }
 \value{
 magick a image object or threshold value
