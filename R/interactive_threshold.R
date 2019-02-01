@@ -25,8 +25,6 @@ interactive_threshold <- function(image, type = c("black", "white"), channel = N
   # set variable range
   range_thr <- c(0,100)                               # threshold of image_threshold is a percentage.
   length_slider <- 200 * scale                        # length of slider
-  digits <- log(resolution, 10)
-  digits <- ifelse(digits < 0, -digits, 0)            # digits of resolution
   text_label <- "Threshold: "                         # text shown in label
   quit_waiting <- !is.null(getOption("unit_test_magickGUI"))
   
@@ -39,11 +37,6 @@ interactive_threshold <- function(image, type = c("black", "white"), channel = N
   }
   win1.im <- tkrplot(win1, fun = im_tcl(iniv), hscale = scale, vscale = scale)
   tkpack(win1.im)
-  format_val <- function(val)
-  {
-    res <- as.numeric(val)
-    
-  }
   win1.label <- tklabel(win1, text = sprintf("%s%s %%", text_label, iniv))
   tkpack(win1.label, side = "top", anchor = "c")
   slider_value <- tclVar(iniv)

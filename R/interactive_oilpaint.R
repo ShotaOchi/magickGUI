@@ -24,8 +24,6 @@ interactive_oilpaint <- function(image, range_max = 10, scale = 1, resolution = 
   # set variable range
   range_radius <- c(0,range_max)
   length_slider <- 200 * scale                        # length of slider
-  digits <- log(resolution, 10)
-  digits <- ifelse(digits < 0, -digits, 0)            # digits of resolution
   text_label <- "Radius: "                         # text shown in label
   quit_waiting <- !is.null(getOption("unit_test_magickGUI"))
   
@@ -38,12 +36,7 @@ interactive_oilpaint <- function(image, range_max = 10, scale = 1, resolution = 
   }
   win1.im <- tkrplot(win1, fun = im_tcl(iniv), hscale = scale, vscale = scale)
   tkpack(win1.im)
-  format_val <- function(val)
-  {
-    res <- as.numeric(val)
-    
-  }
-  win1.label <- tklabel(win1, text = sprintf("%s%s %%", text_label, formatC(iniv)))
+  win1.label <- tklabel(win1, text = sprintf("%s%s", text_label, formatC(iniv)))
   tkpack(win1.label, side = "top", anchor = "c")
   slider_value <- tclVar(iniv)
   command_slider <- function(...)
@@ -70,7 +63,7 @@ interactive_oilpaint <- function(image, range_max = 10, scale = 1, resolution = 
     if (quit_waiting) break
     if (pre_slider_value != as.numeric(tclvalue(slider_value))) {
       temp_slider_value <- as.numeric(tclvalue(slider_value))
-      temp_label <- sprintf("%s%s %%", text_label, formatC(temp_slider_value))
+      temp_label <- sprintf("%s%s", text_label, formatC(temp_slider_value))
       tkconfigure(win1.label, text = temp_label)
       tempim <- tkrplot(win1, fun = im_tcl(temp_slider_value), hscale = scale, vscale = scale)
       tkconfigure(win1.im, image = tempim$image)
