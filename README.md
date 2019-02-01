@@ -1,6 +1,7 @@
 # magickGUI
 
 [![Build Status](https://travis-ci.org/ShotaOchi/magickGUI.svg?branch=master)](https://travis-ci.org/ShotaOchi/magickGUI)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/ShotaOchi/magickGUI?branch=master&svg=true)](https://ci.appveyor.com/project/ShotaOchi/magickGUI)
 [![CRAN Version](https://www.r-pkg.org/badges/version/magickGUI)](https://cran.r-project.org/package=magickGUI)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![codecov](https://codecov.io/gh/ShotaOchi/magickGUI/branch/master/graph/badge.svg)](https://codecov.io/gh/ShotaOchi/magickGUI)
