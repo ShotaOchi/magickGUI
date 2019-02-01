@@ -51,7 +51,7 @@ interactive_oilpaint <- function(image, range_max = 10, scale = 1, resolution = 
     assign("slider_value", slider_value, inherits = TRUE)
   }
 
-  win1.slider <- tkscale(win1, from = range_radius[1], to = range_radius[2], variable = slider_value, orient = "horizontal", length = length_slider, command = command_slider, resolution = resolution, digits = digits)
+  win1.slider <- tkscale(win1, from = range_radius[1], to = range_radius[2], variable = slider_value, orient = "horizontal", length = length_slider, command = command_slider, resolution = resolution, showvalue = 0)
   command_button <- function(...)
   {
     assign("quit_waiting", TRUE, inherits = TRUE)

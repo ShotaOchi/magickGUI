@@ -52,7 +52,7 @@ interactive_threshold <- function(image, type = c("black", "white"), channel = N
     assign("slider_value", slider_value, inherits = TRUE)
   }
 
-  win1.slider <- tkscale(win1, from = range_thr[1], to = range_thr[2], variable = slider_value, orient = "horizontal", length = length_slider, command = command_slider, resolution = resolution, digits = digits)
+  win1.slider <- tkscale(win1, from = range_thr[1], to = range_thr[2], variable = slider_value, orient = "horizontal", length = length_slider, command = command_slider, resolution = resolution, showvalue = 0)
   command_button <- function(...)
   {
     assign("quit_waiting", TRUE, inherits = TRUE)
