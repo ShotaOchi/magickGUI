@@ -13,9 +13,15 @@ install:
 cache:
   - C:\RLibrary
 
+image: Visual Studio 2017
+
 environment:
   global:
     USE_RTOOLS: true
+    WARNINGS_ARE_ERRORS: 1
+    
+matrix:
+  fast_finish: true
 
 build_script:
   - travis-tool.sh install_deps
