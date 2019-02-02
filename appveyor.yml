@@ -13,11 +13,9 @@ install:
 cache:
   - C:\RLibrary
 
-image: Visual Studio 2017
-
 environment:
   global:
-    USE_RTOOLS: true
+    unit_test_magickGUI: true
     WARNINGS_ARE_ERRORS: 1
     
 matrix:
