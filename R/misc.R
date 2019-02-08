@@ -6,8 +6,9 @@
 NULL
 
 #' @importFrom graphics plot
-#' @importFrom magick image_threshold
+#' @importFrom magick image_implode
 #' @importFrom magick image_oilpaint
+#' @importFrom magick image_threshold
 #' @importFrom tcltk tclvalue
 #' @importFrom tcltk tclVar
 #' @importFrom tcltk tkbutton
