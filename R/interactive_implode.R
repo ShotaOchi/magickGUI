@@ -65,6 +65,10 @@ interactive_implode <- function(image, range_max = 1, resolution = 0.1, return_p
   tkpack(win1.slider, side = "top")
   tkpack(win1.button, side = "top", anchor = "c", pady = 20)
   pre_slider_value <- as.numeric(tclvalue(slider_value))
+  if (quit_waiting)
+  {
+    Sys.sleep(0.1)
+  }
   while (TRUE)
   {
     tryCatch({

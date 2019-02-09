@@ -66,6 +66,10 @@ interactive_threshold <- function(image, type = c("black", "white"), channel = N
   tkpack(win1.slider, side = "top")
   tkpack(win1.button, side = "top", anchor = "c", pady = 20)
   pre_slider_value <- as.numeric(tclvalue(slider_value))
+  if (quit_waiting)
+  {
+    Sys.sleep(0.1)
+  }
   while (TRUE)
   {
     tryCatch({
