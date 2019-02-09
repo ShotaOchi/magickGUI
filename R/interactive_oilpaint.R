@@ -83,7 +83,7 @@ interactive_oilpaint <- function(image, range_max = 10, resolution = 0.1, return
       pre_sliderValue <- temp_val
     }
   }
-  val_res <- pre_slider_value
+  val_res <- as.numeric(tclvalue(slider_value))
   if (return_param)
   {
     return(val_res)

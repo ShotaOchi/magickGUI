@@ -86,7 +86,7 @@ interactive_threshold <- function(image, type = c("black", "white"), channel = N
       pre_sliderValue <- temp_val
     }
   }
-  val_res <- pre_slider_value
+  val_res <- as.numeric(tclvalue(slider_value))
   if (return_param)
   {
     return(sprintf("%s%%", formatC(val_res)))

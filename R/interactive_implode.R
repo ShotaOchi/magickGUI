@@ -85,7 +85,7 @@ interactive_implode <- function(image, range_max = 1, resolution = 0.1, return_p
       pre_sliderValue <- temp_val
     }
   }
-  val_res <- pre_slider_value
+  val_res <- as.numeric(tclvalue(slider_value))
   if (return_param)
   {
     return(val_res)
