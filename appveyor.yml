@@ -15,8 +15,12 @@ cache:
 
 environment:
   global:
+    USE_RTOOLS: true
     unit_test_magickGUI: true
     WARNINGS_ARE_ERRORS: 1
+
+matrix:
+  fast_finish: true
 
 build_script:
   - travis-tool.sh install_deps
