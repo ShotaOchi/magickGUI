@@ -4,15 +4,13 @@
 \alias{interactive_implode}
 \title{interactive imploding}
 \usage{
-interactive_implode(image, range_max = 1, scale = 1,
-  resolution = 0.1, return_param = FALSE)
+interactive_implode(image, range_max = 1, resolution = 0.1,
+  return_param = FALSE)
 }
 \arguments{
 \item{image}{a magick image object}
 
 \item{range_max}{define maximum in slider. must be positive.}
-
-\item{scale}{scale factor for size of image shown in plot. scale does not affect result.}
 
 \item{resolution}{resolution of slider}
 

@@ -4,15 +4,13 @@
 \alias{interactive_oilpaint}
 \title{interactive oil painting}
 \usage{
-interactive_oilpaint(image, range_max = 10, scale = 1,
-  resolution = 0.1, return_param = FALSE)
+interactive_oilpaint(image, range_max = 10, resolution = 0.1,
+  return_param = FALSE)
 }
 \arguments{
 \item{image}{a magick image object}
 
 \item{range_max}{define maximum in slider. must be positive.}
-
-\item{scale}{scale factor for size of image shown in plot. scale does not affect result.}
 
 \item{resolution}{resolution of slider}
 

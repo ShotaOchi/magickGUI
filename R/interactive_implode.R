@@ -4,7 +4,6 @@
 #' factor is a parameter of image_implode. see reference manual of 'magick' for detail.
 #' @param image a magick image object
 #' @param range_max define maximum in slider. must be positive.
-#' @param scale scale factor for size of image shown in plot. scale does not affect result.
 #' @param resolution resolution of slider
 #' @param return_param if TRUE, returns value of factor. if FALSE, returns magick image object.
 #' @return magick a image object or value of factor
@@ -15,29 +14,32 @@
 #' interactive_implode(wizard)
 #' }
 
-interactive_implode <- function(image, range_max = 1, scale = 1, resolution = 0.1, return_param = FALSE)
+interactive_implode <- function(image, range_max = 1, resolution = 0.1, return_param = FALSE)
 {
   # make initial output
   iniv <- 0
   initial <- image_implode(image, iniv)
 
   # set variable range
+  iminfo <- image_info(image)
   range_radius <- c(0,range_max)
-  length_slider <- 200 * scale                        # length of slider
+  length_slider <- as.integer(iminfo["width"] * 0.8)                       # length of slider
+  if (length_slider < 200)
+  {
+    length_slider <- 200
+  }
   text_label <- "Factor: "                         # text shown in label
   quit_waiting <- !is.null(getOption("unit_test_magickGUI"))
-  
+  temp <- tempfile(fileext = ".jpg")
+  on.exit(unlink(temp), add = TRUE)
+  image_write(initial, temp)
+  image_tcl <- tkimage.create("photo", "image_tcl", file = temp)
+
   # configure widgets
   win1 <- tktoplevel()
-  on.exit(tkdestroy(win1))
-  im_tcl <- function(val)
-  {
-    return(function() plot(image_implode(image, val)))
-  }
-  win1.im <- tkrplot(win1, fun = im_tcl(iniv), hscale = scale, vscale = scale)
-  tkpack(win1.im)
+  on.exit(tkdestroy(win1), add = TRUE)
+  win1.im <- tklabel(win1, image = image_tcl)
   win1.label <- tklabel(win1, text = sprintf("%s%s", text_label, formatC(iniv)))
-  tkpack(win1.label, side = "top", anchor = "c")
   slider_value <- tclVar(iniv)
   command_slider <- function(...)
   {
@@ -50,6 +52,16 @@ interactive_implode <- function(image, range_max = 1, scale = 1, resolution = 0.
     assign("quit_waiting", TRUE, inherits = TRUE)
   }
   win1.button <- tkbutton(win1, text = "OK", command = command_button)
+  temp_val <- iniv
+  update_image <- function()
+  {
+    temp_image <- image_implode(image, temp_val)
+    image_write(temp_image, temp)
+    image_tcl <- tkimage.create("photo", "image_tcl", file = temp)
+    tkconfigure(win1.im, image = image_tcl)
+  }
+  tkpack(win1.im)
+  tkpack(win1.label, side = "top", anchor = "c")
   tkpack(win1.slider, side = "top")
   tkpack(win1.button, side = "top", anchor = "c", pady = 20)
   pre_slider_value <- as.numeric(tclvalue(slider_value))
@@ -62,12 +74,11 @@ interactive_implode <- function(image, range_max = 1, scale = 1, resolution = 0.
     )
     if (quit_waiting) break
     if (pre_slider_value != as.numeric(tclvalue(slider_value))) {
-      temp_slider_value <- as.numeric(tclvalue(slider_value))
-      temp_label <- sprintf("%s%s", text_label, formatC(temp_slider_value))
+      temp_val <- as.numeric(tclvalue(slider_value))
+      temp_label <- sprintf("%s%s", text_label, formatC(temp_val))
       tkconfigure(win1.label, text = temp_label)
-      tempim <- tkrplot(win1, fun = im_tcl(temp_slider_value), hscale = scale, vscale = scale)
-      tkconfigure(win1.im, image = tempim$image)
-      pre_sliderValue <- temp_slider_value
+      update_image()
+      pre_sliderValue <- temp_val
     }
   }
   val_res <- pre_slider_value
