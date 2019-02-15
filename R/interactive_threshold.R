@@ -24,7 +24,7 @@ interactive_threshold <- function(image, type = c("black", "white"), channel = N
   # set variable range
   iminfo <- image_info(image)
   range_thr <- c(0,100)                               # threshold of image_threshold is a percentage.
-  length_slider <- as.integer(iminfo["width"] * 0.8)  # length of slider
+  length_slider <- as.integer(iminfo["width"] * 0.6)  # length of slider
   if (length_slider < 200)
   {
     length_slider <- 200
@@ -35,19 +35,20 @@ interactive_threshold <- function(image, type = c("black", "white"), channel = N
   on.exit(unlink(temp), add = TRUE)
   image_write(initial, temp)
   image_tcl <- tkimage.create("photo", "image_tcl", file = temp)
-  
+
   # configure widgets
   iminfo <- image_info(image)
   win1 <- tktoplevel()
   on.exit(tkdestroy(win1), add = TRUE)
+  win1.frame1 <- tkframe(win1)
   win1.im <- tklabel(win1, image = image_tcl)
-  win1.label <- tklabel(win1, text = sprintf("%s%s %%", text_label, iniv))
+  win1.frame1.label <- tklabel(win1.frame1, text = sprintf("%s%s %%", text_label, iniv))
   slider_value <- tclVar(iniv)
   command_slider <- function(...)
   {
     assign("slider_value", slider_value, inherits = TRUE)
   }
-  win1.slider <- tkscale(win1, from = range_thr[1], to = range_thr[2], variable = slider_value, orient = "horizontal", length = length_slider, command = command_slider, resolution = resolution, showvalue = 0)
+  win1.frame1.slider <- tkscale(win1.frame1, from = range_thr[1], to = range_thr[2], variable = slider_value, orient = "horizontal", length = length_slider, command = command_slider, resolution = resolution, showvalue = 0)
   command_button <- function(...)
   {
     assign("quit_waiting", TRUE, inherits = TRUE)
@@ -62,8 +63,9 @@ interactive_threshold <- function(image, type = c("black", "white"), channel = N
   }
   win1.button <- tkbutton(win1, text = "OK", command = command_button)
   tkpack(win1.im)
-  tkpack(win1.label, side = "top", anchor = "c")
-  tkpack(win1.slider, side = "top")
+  tkpack(win1.frame1.label, side = "left", anchor = "c")
+  tkpack(win1.frame1.slider, side = "left", anchor = "c")
+  tkpack(win1.frame1, side = "top", anchor = "c")
   tkpack(win1.button, side = "top", anchor = "c", pady = 20)
   pre_slider_value <- as.numeric(tclvalue(slider_value))
   if (quit_waiting)
@@ -78,13 +80,11 @@ interactive_threshold <- function(image, type = c("black", "white"), channel = N
       error = function(e) assign("quit_waiting", TRUE, inherits = TRUE)
     )
     if (quit_waiting) break
-    if (pre_slider_value != as.numeric(tclvalue(slider_value))) {
-      temp_val <- as.numeric(tclvalue(slider_value))
-      temp_label <- sprintf("%s%s %%", text_label, formatC(temp_val))
-      tkconfigure(win1.label, text = temp_label)
-      update_image()
-      pre_sliderValue <- temp_val
-    }
+    temp_val <- as.numeric(tclvalue(slider_value))
+    temp_label <- sprintf("%s%s %%", text_label, formatC(temp_val))
+    tkconfigure(win1.frame1.label, text = temp_label)
+    update_image()
+    pre_sliderValue <- temp_val
   }
   val_res <- as.numeric(tclvalue(slider_value))
   if (return_param)

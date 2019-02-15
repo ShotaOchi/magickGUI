@@ -16,6 +16,7 @@ NULL
 #' @importFrom tcltk tkbutton
 #' @importFrom tcltk tkconfigure
 #' @importFrom tcltk tkdestroy
+#' @importFrom tcltk tkframe
 #' @importFrom tcltk tkimage.create
 #' @importFrom tcltk tklabel
 #' @importFrom tcltk tkpack

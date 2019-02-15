@@ -22,7 +22,7 @@ interactive_oilpaint <- function(image, range_max = 10, resolution = 0.1, return
   # set variable range
   iminfo <- image_info(image)
   range_radius <- c(0,range_max)
-  length_slider <- as.integer(iminfo["width"] * 0.8) # length of slider
+  length_slider <- as.integer(iminfo["width"] * 0.6) # length of slider
   if (length_slider < 200)
   {
     length_slider <- 200
@@ -33,18 +33,22 @@ interactive_oilpaint <- function(image, range_max = 10, resolution = 0.1, return
   on.exit(unlink(temp), add = TRUE)
   image_write(initial, temp)
   image_tcl <- tkimage.create("photo", "image_tcl", file = temp)
+  label_digits <- -as.integer(log(resolution, 10))
+  label_digits <- ifelse(label_digits > 0, label_digits, 0)
+  label_template <- sprintf("%%.%df", label_digits)
   
   # configure widgets
   win1 <- tktoplevel()
   on.exit(tkdestroy(win1), add = TRUE)
+  win1.frame1 <- tkframe(win1)
   win1.im <- tklabel(win1, image = image_tcl)
-  win1.label <- tklabel(win1, text = sprintf("%s%s", text_label, formatC(iniv)))
+  win1.frame1.label <- tklabel(win1.frame1, text = sprintf("%s%s", text_label, sprintf(label_template, iniv)))
   slider_value <- tclVar(iniv)
   command_slider <- function(...)
   {
     assign("slider_value", slider_value, inherits = TRUE)
   }
-  win1.slider <- tkscale(win1, from = range_radius[1], to = range_radius[2], variable = slider_value, orient = "horizontal", length = length_slider, command = command_slider, resolution = resolution, showvalue = 0)
+  win1.frame1.slider <- tkscale(win1.frame1, from = range_radius[1], to = range_radius[2], variable = slider_value, orient = "horizontal", length = length_slider, command = command_slider, resolution = resolution, showvalue = 0)
   temp_val <- iniv
   update_image <- function()
   {
@@ -59,8 +63,9 @@ interactive_oilpaint <- function(image, range_max = 10, resolution = 0.1, return
   }
   win1.button <- tkbutton(win1, text = "OK", command = command_button)
   tkpack(win1.im, side = "top")
-  tkpack(win1.label, side = "top", anchor = "c")
-  tkpack(win1.slider, side = "top")
+  tkpack(win1.frame1.label, side = "left", anchor = "c")
+  tkpack(win1.frame1.slider, side = "left", anchor = "c")
+  tkpack(win1.frame1, side = "top", anchor = "c")
   tkpack(win1.button, side = "top", anchor = "c", pady = 20)
   pre_slider_value <- as.numeric(tclvalue(slider_value))
   if (quit_waiting)
@@ -75,13 +80,11 @@ interactive_oilpaint <- function(image, range_max = 10, resolution = 0.1, return
       error = function(e) assign("quit_waiting", TRUE, inherits = TRUE)
     )
     if (quit_waiting) break
-    if (pre_slider_value != as.numeric(tclvalue(slider_value))) {
-      temp_val <- as.numeric(tclvalue(slider_value))
-      temp_label <- sprintf("%s%s", text_label, formatC(temp_val))
-      tkconfigure(win1.label, text = temp_label)
-      update_image()
-      pre_sliderValue <- temp_val
-    }
+    temp_val <- as.numeric(tclvalue(slider_value))
+    temp_label <- sprintf("%s%s", text_label, sprintf(label_template, temp_val))
+    tkconfigure(win1.frame1.label, text = temp_label)
+    update_image()
+    pre_sliderValue <- temp_val
   }
   val_res <- as.numeric(tclvalue(slider_value))
   if (return_param)
