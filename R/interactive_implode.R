@@ -41,21 +41,15 @@ interactive_implode <- function(image, range_max = 1, resolution = 0.1, return_p
   # configure widgets
   win1 <- tktoplevel()
   on.exit(tkdestroy(win1), add = TRUE)
-  win1.im <- tklabel(win1, image = image_tcl)
   win1.frame1 <- tkframe(win1)
+  win1.im <- tklabel(win1, image = image_tcl)
   win1.frame1.label <- tklabel(win1.frame1, text = sprintf("%s%s", text_label, sprintf(label_template, iniv)))
   slider_value <- tclVar(iniv)
   command_slider <- function(...)
   {
     assign("slider_value", slider_value, inherits = TRUE)
   }
-
   win1.frame1.slider <- tkscale(win1.frame1, from = range_radius[1], to = range_radius[2], variable = slider_value, orient = "horizontal", length = length_slider, command = command_slider, resolution = resolution, showvalue = 0)
-  command_button <- function(...)
-  {
-    assign("quit_waiting", TRUE, inherits = TRUE)
-  }
-  win1.button <- tkbutton(win1, text = "OK", command = command_button)
   temp_val <- iniv
   update_image <- function()
   {
@@ -64,7 +58,12 @@ interactive_implode <- function(image, range_max = 1, resolution = 0.1, return_p
     image_tcl <- tkimage.create("photo", "image_tcl", file = temp)
     tkconfigure(win1.im, image = image_tcl)
   }
-  tkpack(win1.im)
+  command_button <- function(...)
+  {
+    assign("quit_waiting", TRUE, inherits = TRUE)
+  }
+  win1.button <- tkbutton(win1, text = "OK", command = command_button)
+  tkpack(win1.im, side = "top")
   tkpack(win1.frame1.label, side = "left", anchor = "c")
   tkpack(win1.frame1.slider, side = "left", anchor = "c")
   tkpack(win1.frame1, side = "top", anchor = "c")
@@ -83,12 +82,16 @@ interactive_implode <- function(image, range_max = 1, resolution = 0.1, return_p
     )
     if (quit_waiting) break
     temp_val <- as.numeric(tclvalue(slider_value))
-    temp_label <- sprintf("%s%s", text_label, sprintf(label_template, temp_val))
-    tkconfigure(win1.frame1.label, text = temp_label)
-    update_image()
-    pre_sliderValue <- temp_val
+    if (temp_val != pre_slider_value)
+    {
+      temp_label <- sprintf("%s%s", text_label, sprintf(label_template, temp_val))
+      tkconfigure(win1.frame1.label, text = temp_label)
+      update_image()
+      pre_slider_value <- temp_val
+    }
   }
-  val_res <- as.numeric(tclvalue(slider_value))
+  val_res <- pre_slider_value
+  names(val_res) <- "factor"
   if (return_param)
   {
     return(val_res)

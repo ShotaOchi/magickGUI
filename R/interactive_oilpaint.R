@@ -13,6 +13,7 @@
 #' \dontrun{
 #' interactive_oilpaint(wizard)
 #' }
+
 interactive_oilpaint <- function(image, range_max = 10, resolution = 0.1, return_param = FALSE)
 {
   # make initial output
@@ -81,12 +82,16 @@ interactive_oilpaint <- function(image, range_max = 10, resolution = 0.1, return
     )
     if (quit_waiting) break
     temp_val <- as.numeric(tclvalue(slider_value))
-    temp_label <- sprintf("%s%s", text_label, sprintf(label_template, temp_val))
-    tkconfigure(win1.frame1.label, text = temp_label)
-    update_image()
-    pre_sliderValue <- temp_val
+    if (temp_val != pre_slider_value)
+    {
+      temp_label <- sprintf("%s%s", text_label, sprintf(label_template, temp_val))
+      tkconfigure(win1.frame1.label, text = temp_label)
+      update_image()
+      pre_slider_value <- temp_val
+    }
   }
-  val_res <- as.numeric(tclvalue(slider_value))
+  val_res <- pre_slider_value
+  names(val_res) <- "radius"
   if (return_param)
   {
     return(val_res)

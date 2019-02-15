@@ -81,15 +81,19 @@ interactive_threshold <- function(image, type = c("black", "white"), channel = N
     )
     if (quit_waiting) break
     temp_val <- as.numeric(tclvalue(slider_value))
-    temp_label <- sprintf("%s%s %%", text_label, formatC(temp_val))
-    tkconfigure(win1.frame1.label, text = temp_label)
-    update_image()
-    pre_sliderValue <- temp_val
+    if (temp_val != pre_slider_value)
+    {
+      temp_label <- sprintf("%s%s %%", text_label, formatC(temp_val))
+      tkconfigure(win1.frame1.label, text = temp_label)
+      update_image()
+      pre_slider_value <- temp_val
+    }
   }
-  val_res <- as.numeric(tclvalue(slider_value))
+  val_res <- paste(formatC(pre_slider_value), "%", sep = "")
+  names(val_res) <- "threshold"
   if (return_param)
   {
-    return(sprintf("%s%%", formatC(val_res)))
+    return(val_res)
   }
-  return(image_threshold(image, type = type, threshold = sprintf("%f%%", val_res), channel = channel))
+  return(image_threshold(image, type = type, threshold = val_res, channel = channel))
 }
