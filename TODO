@@ -2,7 +2,6 @@
  ** image_modulate
  ** image_quantize
  ** image_contrast
- ** image_reducenoise
  ** image_blur
  ** image_charcoal
  ** image_emboss

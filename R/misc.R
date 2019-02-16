@@ -10,6 +10,7 @@ NULL
 #' @importFrom magick image_implode
 #' @importFrom magick image_info
 #' @importFrom magick image_oilpaint
+#' @importFrom magick image_reducenoise
 #' @importFrom magick image_threshold
 #' @importFrom magick image_write
 #' @importFrom tcltk tclvalue
