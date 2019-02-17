@@ -1,6 +1,5 @@
 * add functions
  ** image_modulate
- ** image_quantize
  ** image_blur
  ** image_charcoal
  ** image_emboss
