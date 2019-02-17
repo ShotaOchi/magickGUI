@@ -71,7 +71,7 @@ interactive_reducenoise <- function(image, range_max = 30, resolution = 1, retur
   pre_slider_value <- as.numeric(tclvalue(slider_value))
   if (quit_waiting)
   {
-    Sys.sleep(0.2)
+    Sys.sleep(0.3)
   }
   while (TRUE)
   {
