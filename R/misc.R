@@ -6,6 +6,7 @@
 NULL
 
 #' @importFrom graphics plot
+#' @importFrom magick image_charcoal
 #' @importFrom magick image_despeckle
 #' @importFrom magick image_emboss
 #' @importFrom magick image_implode
