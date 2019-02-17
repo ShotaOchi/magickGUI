@@ -43,7 +43,7 @@ interactive_quantize <- function(image, colorspace = "rgb", dither = NULL, treed
 
   # configure widgets
   win1 <- tktoplevel()
-  on.exit(try(tkdestroy(win1), silent = TRUE), add = TRUE)
+  on.exit(tkdestroy(win1), add = TRUE)
   win1.frame1 <- tkframe(win1)
   win1.im <- tklabel(win1, image = image_tcl)
   win1.frame1.label <- tklabel(win1.frame1, text = sprintf("%s%s", text_label, sprintf(label_template, iniv)))
@@ -72,10 +72,7 @@ interactive_quantize <- function(image, colorspace = "rgb", dither = NULL, treed
   tkpack(win1.frame1, side = "top", anchor = "c")
   tkpack(win1.button, side = "top", anchor = "c", pady = 20)
   pre_slider_value <- as.numeric(tclvalue(slider_value))
-  if(quit_waiting)
-  {
-    Sys.sleep(0.1)
-  }
+  tkwm.state(win1, "normal")
   while (TRUE)
   {
     tryCatch({
