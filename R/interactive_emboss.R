@@ -1,4 +1,4 @@
-#' interactive iembossing
+#' interactive embossing
 #'
 #' Using image_emboss of 'magick' interactively.
 #' radius and sigma are parameters of image_emboss. see reference manual of 'magick' for detail.

@@ -2,7 +2,7 @@
 % Please edit documentation in R/interactive_emboss.R
 \name{interactive_emboss}
 \alias{interactive_emboss}
-\title{interactive iembossing}
+\title{interactive embossing}
 \usage{
 interactive_emboss(image, range_max_radius = 5, range_max_sigma = 5,
   resolution = 0.1, return_param = FALSE)
