@@ -95,6 +95,9 @@ interactive_blur <- function(image, range_max_radius = 5, range_max_sigma = 5, r
       error = function(e) assign("wait_test", TRUE, inherits = TRUE)
       )
     }
+    wait_start <- proc.time()[3]
+    wait_time <- 0.1
+    while (proc.time()[3] - wait_start < wait_time) {}
   }
   tkwm.state(win1, "normal")
   while (TRUE)
