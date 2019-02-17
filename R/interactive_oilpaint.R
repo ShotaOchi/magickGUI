@@ -40,7 +40,7 @@ interactive_oilpaint <- function(image, range_max = 10, resolution = 0.1, return
   
   # configure widgets
   win1 <- tktoplevel()
-  on.exit(tkdestroy(win1), add = TRUE)
+  on.exit(try(tkdestroy(win1), silent = TRUE), add = TRUE)
   win1.frame1 <- tkframe(win1)
   win1.im <- tklabel(win1, image = image_tcl)
   win1.frame1.label <- tklabel(win1.frame1, text = sprintf("%s%s", text_label, sprintf(label_template, iniv)))

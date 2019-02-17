@@ -69,10 +69,6 @@ interactive_reducenoise <- function(image, range_max = 30, resolution = 1, retur
   tkpack(win1.frame1, side = "top", anchor = "c")
   tkpack(win1.button, side = "top", anchor = "c", pady = 20)
   pre_slider_value <- as.numeric(tclvalue(slider_value))
-  if (quit_waiting)
-  {
-    Sys.sleep(0.1)
-  }
   while (TRUE)
   {
     tryCatch({
