@@ -40,7 +40,7 @@ interactive_reducenoise <- function(image, range_max = 30, resolution = 1, retur
   
   # configure widgets
   win1 <- tktoplevel()
-  on.exit(tkdestroy(win1), add = TRUE)
+  on.exit(try(tkdestroy(win1), silent = TRUE), add = TRUE)
   win1.frame1 <- tkframe(win1)
   win1.im <- tklabel(win1, image = image_tcl)
   win1.frame1.label <- tklabel(win1.frame1, text = sprintf("%s%s", text_label, sprintf(label_template, iniv)))
@@ -71,7 +71,7 @@ interactive_reducenoise <- function(image, range_max = 30, resolution = 1, retur
   pre_slider_value <- as.numeric(tclvalue(slider_value))
   if (quit_waiting)
   {
-    Sys.sleep(0.3)
+    Sys.sleep(0.1)
   }
   while (TRUE)
   {
