@@ -69,6 +69,22 @@ interactive_oilpaint <- function(image, range_max = 10, resolution = 0.1, return
   tkpack(win1.frame1, side = "top", anchor = "c")
   tkpack(win1.button, side = "top", anchor = "c", pady = 20)
   pre_slider_value <- as.numeric(tclvalue(slider_value))
+  if (quit_waiting)
+  {
+    wait_test <- TRUE
+    while (wait_test)
+    {
+      wait_test <- FALSE
+      tryCatch({
+        tkwm.state(win1)
+      },
+      error = function(e) assign("wait_test", TRUE, inherits = TRUE)
+      )
+    }
+    wait_start <- proc.time()[3]
+    wait_time <- 0.1
+    while (proc.time()[3] - wait_start < wait_time) {}
+  }
   tkwm.state(win1, "normal")
   while (TRUE)
   {
