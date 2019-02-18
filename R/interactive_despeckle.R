@@ -82,7 +82,7 @@ interactive_despeckle <- function(image, range_max = 50, resolution = 1, return_
       )
     }
     wait_start <- proc.time()[3]
-    wait_time <- 0.1
+    wait_time <- getOption("unit_test_magickGUI_wait_time")
     while (proc.time()[3] - wait_start < wait_time) {}
   }
   tkwm.state(win1, "normal") 

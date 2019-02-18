@@ -82,7 +82,7 @@ interactive_reducenoise <- function(image, range_max = 30, resolution = 1, retur
       )
     }
     wait_start <- proc.time()[3]
-    wait_time <- 0.1
+    wait_time <- getOption("unit_test_magickGUI_wait_time")
     while (proc.time()[3] - wait_start < wait_time) {}
   }
   tkwm.state(win1, "normal")
