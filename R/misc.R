@@ -35,7 +35,7 @@ NULL
 wait_time <- function()
 {
   wait_start <- proc.time()[3]
-  wait_time <- 0.2 # sec
+  wait_time <- 0.3 # sec
   while (proc.time()[3] - wait_start < wait_time) {}
 }
 
