@@ -12,6 +12,7 @@ NULL
 #' @importFrom magick image_emboss
 #' @importFrom magick image_implode
 #' @importFrom magick image_info
+#' @importFrom magick image_modulate
 #' @importFrom magick image_oilpaint
 #' @importFrom magick image_quantize
 #' @importFrom magick image_reducenoise
