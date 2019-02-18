@@ -49,8 +49,8 @@ interactive_charcoal <- function(image, range_max_radius = 5, range_max_sigma = 
   win1.im <- tklabel(win1, image = image_tcl)
   win1.frame1.label <- tklabel(win1.frame1, text = sprintf("%s%s", text_label_radius, sprintf(label_template, iniv)))
   win1.frame2.label <- tklabel(win1.frame2, text = sprintf("%s%s", text_label_sigma, sprintf(label_template, iniv)))
-  slider_value_radius <- tclVar(iniv[1])
-  slider_value_sigma <- tclVar(iniv[2])
+  slider_value_radius <- tclVar(iniv)
+  slider_value_sigma <- tclVar(iniv)
   command_slider_radius <- function(...)
   {
     assign("slider_value_radius", slider_value_radius, inherits = TRUE)
