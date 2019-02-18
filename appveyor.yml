@@ -20,8 +20,6 @@ environment:
   global:
     USE_RTOOLS: true
     unit_test_magickGUI: true
-    unit_test_magickGUI_wait_time: 1
-    unit_test_magickGUI_wait_time_long: 1
     WARNINGS_ARE_ERRORS: 1
 
 matrix:

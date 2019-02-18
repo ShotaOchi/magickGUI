@@ -81,9 +81,7 @@ interactive_oilpaint <- function(image, range_max = 10, resolution = 0.1, return
       error = function(e) assign("wait_test", TRUE, inherits = TRUE)
       )
     }
-    wait_start <- proc.time()[3]
-    wait_time <- getOption("unit_test_magickGUI_wait_time")
-    while (proc.time()[3] - wait_start < wait_time) {}
+    wait_time()
   }
   tkwm.state(win1, "normal")
   while (TRUE)

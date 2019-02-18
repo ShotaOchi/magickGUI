@@ -109,9 +109,7 @@ interactive_modulate <- function(image, range_max_brightness = 200, range_max_sa
       error = function(e) assign("wait_test", TRUE, inherits = TRUE)
       )
     }
-    wait_start <- proc.time()[3]
-    wait_time <- getOption("unit_test_magickGUI_wait_time_long")
-    while (proc.time()[3] - wait_start < wait_time) {}
+    wait_time_long()
   }
   tkwm.state(win1, "normal")
   while (TRUE)
