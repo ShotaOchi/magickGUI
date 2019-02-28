@@ -26,7 +26,7 @@ Using image_charcoal of 'magick' interactively.
 radius and sigma are parameters of image_charcoal. see reference manual of 'magick' for detail.
 }
 \examples{
-\dontrun{
+\donttest{
 interactive_charcoal(wizard)
 }
 }

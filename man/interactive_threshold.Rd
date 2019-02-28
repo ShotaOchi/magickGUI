@@ -26,7 +26,7 @@ Using image_threshold of 'magick' interactively.
 type and channel are parameters of image_threshold. see reference manual of 'magick' for detail.
 }
 \examples{
-\dontrun{
+\donttest{
 interactive_threshold(wizard)
 }
 }

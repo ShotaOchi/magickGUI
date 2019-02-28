@@ -24,7 +24,7 @@ Using image_oilpaint of 'magick' interactively.
 radius is a parameter of image_oilpaint. see reference manual of 'magick' for detail.
 }
 \examples{
-\dontrun{
+\donttest{
 interactive_oilpaint(wizard)
 }
 }

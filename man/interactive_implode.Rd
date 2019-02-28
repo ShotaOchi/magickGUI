@@ -24,7 +24,7 @@ Using image_implode of 'magick' interactively.
 factor is a parameter of image_implode. see reference manual of 'magick' for detail.
 }
 \examples{
-\dontrun{
+\donttest{
 interactive_implode(wizard)
 }
 }

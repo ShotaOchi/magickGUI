@@ -24,7 +24,7 @@ Using image_reducenoise of 'magick' interactively.
 radius is a parameter of image_reducenoise. see reference manual of 'magick' for detail.
 }
 \examples{
-\dontrun{
+\donttest{
 interactive_reducenoise(wizard)
 }
 }

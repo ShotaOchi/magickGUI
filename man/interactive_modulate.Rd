@@ -29,7 +29,7 @@ Using image_modulate of 'magick' interactively.
 brightness and saturation and hue are parameters of image_modulate. see reference manual of 'magick' for detail.
 }
 \examples{
-\dontrun{
+\donttest{
 interactive_modulate(wizard)
 }
 }

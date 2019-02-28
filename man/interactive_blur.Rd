@@ -26,7 +26,7 @@ Using image_blur of 'magick' interactively.
 radius and sigma are parameters of image_blur. see reference manual of 'magick' for detail.
 }
 \examples{
-\dontrun{
+\donttest{
 interactive_blur(wizard)
 }
 }

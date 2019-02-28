@@ -12,7 +12,7 @@
 #' @author Shota Ochi
 #' @export
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' interactive_modulate(wizard)
 #' }
 

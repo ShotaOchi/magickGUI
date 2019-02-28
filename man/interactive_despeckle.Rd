@@ -24,7 +24,7 @@ Using image_despeckle of 'magick' interactively.
 times is a parameter of image_despeckle. see reference manual of 'magick' for detail.
 }
 \examples{
-\dontrun{
+\donttest{
 interactive_despeckle(wizard)
 }
 }

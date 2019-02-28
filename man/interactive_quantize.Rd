@@ -31,7 +31,7 @@ Using image_quantize of 'magick' interactively.
 max, colorspace, dither, and treedepth are parameters of image_quantize. see reference manual of 'magick' for detail.
 }
 \examples{
-\dontrun{
+\donttest{
 interactive_quantize(wizard)
 }
 }
