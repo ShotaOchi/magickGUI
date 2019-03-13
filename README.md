@@ -10,10 +10,13 @@
 The purpose of magickGUI is to enable us to use the functions of the package 'magick' interactively.
 
 ## Installation
-you can install magickGUI from GitHub.
+you can install magickGUI from CRAN or GitHub.
 
 Run the following R code to install magickGUI.
 ```r
+# install from CRAN
+install.packages("magickGUI")
+#install from Github
 devtools::install_github("ShotaOchi/magickGUI")
 ```
 
