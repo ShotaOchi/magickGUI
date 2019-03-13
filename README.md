@@ -16,7 +16,7 @@ Run the following R code to install magickGUI.
 ```r
 # install from CRAN
 install.packages("magickGUI")
-#install from Github
+# install from Github
 devtools::install_github("ShotaOchi/magickGUI")
 ```
 
