@@ -109,7 +109,8 @@ interactive_modulate <- function(image, range_max_brightness = 200, range_max_sa
       error = function(e) assign("wait_test", TRUE, inherits = TRUE)
       )
     }
-    for (i in seq(10)) wait_time_long()
+    wait_time_long()
+    tkdestroy(win1.button)
   }
   tkwm.state(win1, "normal")
   while (TRUE)
