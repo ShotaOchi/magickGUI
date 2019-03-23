@@ -110,6 +110,7 @@ interactive_modulate <- function(image, range_max_brightness = 200, range_max_sa
       )
     }
     wait_time_long()
+    update_image()
   }
   tkwm.state(win1, "normal")
   while (TRUE)
