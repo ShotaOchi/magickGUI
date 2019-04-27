@@ -38,8 +38,3 @@ For example, image_threshold &rarr; interactive_threshold.
 You're welcome to create issues for any bug report or suggestion on the [issues page](https://github.com/ShotaOchi/magickGUI/issues).
 
 You can also fork this repository and send me a pull request for bug fixes or additional features.
-
-Especially, issues and pull requests related to things shown below are welcome.
-
-* Widget arrangement
-* Build failure on appveyor
