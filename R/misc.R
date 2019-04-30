@@ -57,6 +57,6 @@ get_minimum_version <- function()
   version_ImageMagick <- magick_config()$version
   if (version_ImageMagick < get_minimum_version())
   {
-    packageStartupMessage(sprintf("The version of ImageMagick is %s. The version of ImageMagick should be greater than or equal to %s.", version_ImageMagick, get_minimum_version()))
+    packageStartupMessage(sprintf("The version of ImageMagick is %s.\nThe version of ImageMagick should be greater than or equal to %s.", version_ImageMagick, get_minimum_version()))
   }
 }
