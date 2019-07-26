@@ -22,11 +22,11 @@ interactive_modulate(image, range_max_brightness = 200,
 \item{return_param}{if TRUE, returns values of brightness and saturation and hue. if FALSE, returns magick image object.}
 }
 \value{
-magick a image object or values of brightness and saturation
+a magick image object or values of brightness and saturation
 }
 \description{
 Using image_modulate of 'magick' interactively.
-brightness and saturation and hue are parameters of image_modulate. see reference manual of 'magick' for detail.
+brightness and saturation and hue are parameters of image_modulate. See reference manual of 'magick' for detail.
 }
 \examples{
 \donttest{

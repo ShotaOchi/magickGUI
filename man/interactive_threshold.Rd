@@ -19,11 +19,11 @@ interactive_threshold(image, type = c("black", "white"),
 \item{return_param}{if TRUE, returns threshold value. if FALSE, returns magick image object.}
 }
 \value{
-magick a image object or threshold value
+a magick image object or threshold value
 }
 \description{
 Using image_threshold of 'magick' interactively.
-type and channel are parameters of image_threshold. see reference manual of 'magick' for detail.
+type and channel are parameters of image_threshold. See reference manual of 'magick' for detail.
 }
 \examples{
 \donttest{

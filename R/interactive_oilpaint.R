@@ -1,12 +1,12 @@
 #' interactive oil painting
 #'
 #' Using image_oilpaint of 'magick' interactively.
-#' radius is a parameter of image_oilpaint. see reference manual of 'magick' for detail.
+#' radius is a parameter of image_oilpaint. See reference manual of 'magick' for detail.
 #' @param image a magick image object
 #' @param range_max define maximum in slider. must be positive.
 #' @param resolution resolution of slider
 #' @param return_param if TRUE, returns value of radius. if FALSE, returns magick image object.
-#' @return magick a image object or value of radius
+#' @return a magick image object or value of radius
 #' @author Shota Ochi
 #' @export
 #' @examples

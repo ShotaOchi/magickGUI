@@ -17,11 +17,11 @@ interactive_despeckle(image, range_max = 50, resolution = 1,
 \item{return_param}{if TRUE, returns value of times. if FALSE, returns magick image object.}
 }
 \value{
-magick a image object or value of times
+a magick image object or value of times
 }
 \description{
 Using image_despeckle of 'magick' interactively.
-times is a parameter of image_despeckle. see reference manual of 'magick' for detail.
+times is a parameter of image_despeckle. See reference manual of 'magick' for detail.
 }
 \examples{
 \donttest{

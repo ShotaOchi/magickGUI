@@ -24,11 +24,11 @@ interactive_quantize(image, colorspace = "rgb", dither = NULL,
 \item{return_param}{if TRUE, returns value of max. if FALSE, returns magick image object.}
 }
 \value{
-magick a image object or value of max
+a magick image object or value of max
 }
 \description{
 Using image_quantize of 'magick' interactively.
-max, colorspace, dither, and treedepth are parameters of image_quantize. see reference manual of 'magick' for detail.
+max, colorspace, dither, and treedepth are parameters of image_quantize. See reference manual of 'magick' for detail.
 }
 \examples{
 \donttest{

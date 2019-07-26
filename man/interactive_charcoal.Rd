@@ -19,11 +19,11 @@ interactive_charcoal(image, range_max_radius = 5, range_max_sigma = 5,
 \item{return_param}{if TRUE, returns values of radius and sigma. if FALSE, returns magick image object.}
 }
 \value{
-magick a image object or values of radius and sigma
+a magick image object or values of radius and sigma
 }
 \description{
 Using image_charcoal of 'magick' interactively.
-radius and sigma are parameters of image_charcoal. see reference manual of 'magick' for detail.
+radius and sigma are parameters of image_charcoal. See reference manual of 'magick' for detail.
 }
 \examples{
 \donttest{

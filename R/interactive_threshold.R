@@ -1,13 +1,13 @@
 #' interactive thresholding
 #'
 #' Using image_threshold of 'magick' interactively.
-#' type and channel are parameters of image_threshold. see reference manual of 'magick' for detail.
+#' type and channel are parameters of image_threshold. See reference manual of 'magick' for detail.
 #' @param image a magick image object
 #' @param type type of thresholding, either one of lat, black or white
 #' @param channel a value specifying which channel(s) to set
 #' @param resolution resolution of slider
 #' @param return_param if TRUE, returns threshold value. if FALSE, returns magick image object.
-#' @return magick a image object or threshold value
+#' @return a magick image object or threshold value
 #' @author Shota Ochi
 #' @export
 #' @examples

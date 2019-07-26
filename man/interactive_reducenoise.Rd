@@ -17,11 +17,11 @@ interactive_reducenoise(image, range_max = 30, resolution = 1,
 \item{return_param}{if TRUE, returns value of radius. if FALSE, returns magick image object.}
 }
 \value{
-magick a image object or value of radius
+a magick image object or value of radius
 }
 \description{
 Using image_reducenoise of 'magick' interactively.
-radius is a parameter of image_reducenoise. see reference manual of 'magick' for detail.
+radius is a parameter of image_reducenoise. See reference manual of 'magick' for detail.
 }
 \examples{
 \donttest{

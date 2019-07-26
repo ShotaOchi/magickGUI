@@ -17,11 +17,11 @@ interactive_implode(image, range_max = 1, resolution = 0.1,
 \item{return_param}{if TRUE, returns value of factor. if FALSE, returns magick image object.}
 }
 \value{
-magick a image object or value of factor
+a magick image object or value of factor
 }
 \description{
 Using image_implode of 'magick' interactively.
-factor is a parameter of image_implode. see reference manual of 'magick' for detail.
+factor is a parameter of image_implode. See reference manual of 'magick' for detail.
 }
 \examples{
 \donttest{

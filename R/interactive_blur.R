@@ -1,13 +1,13 @@
 #' interactive blurring
 #'
 #' Using image_blur of 'magick' interactively.
-#' radius and sigma are parameters of image_blur. see reference manual of 'magick' for detail.
+#' radius and sigma are parameters of image_blur. See reference manual of 'magick' for detail.
 #' @param image a magick image object
 #' @param range_max_radius define maximum in slider of radius. must be positive.
 #' @param range_max_sigma define maximum in slider of sigma. must be positive.
 #' @param resolution resolution of slider
 #' @param return_param if TRUE, returns values of radius and sigma. if FALSE, returns magick image object.
-#' @return magick a image object or values of radius and sigma
+#' @return a magick image object or values of radius and sigma
 #' @author Shota Ochi
 #' @export
 #' @examples
