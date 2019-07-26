@@ -1,5 +1,7 @@
 README.md
 TODO
 ^\.travis\.yml$
-NEWS
 ^appveyor\.yml$
+.git
+.gitignore
+.gitattributes
