@@ -7,7 +7,7 @@
 #' @param range_max_saturation define maximum in slider of saturation. must be positive.
 #' @param range_max_hue define maximum in slider of hue. must be positive.
 #' @param resolution resolution of slider
-#' @param return_param if TRUE, returns values of brightness and saturation and hue. if FALSE, returns magick image object.
+#' @param return_param If return_param is TRUE, returns values of brightness and saturation and hue. If return_param is FALSE, returns a magick image object.
 #' @return a magick image object or values of brightness and saturation
 #' @author Shota Ochi
 #' @export

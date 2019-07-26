@@ -6,7 +6,7 @@
 #' @param type type of thresholding, either one of lat, black or white
 #' @param channel a value specifying which channel(s) to set
 #' @param resolution resolution of slider
-#' @param return_param if TRUE, returns threshold value. if FALSE, returns magick image object.
+#' @param return_param If return_param is TRUE, returns threshold value. If return_param is FALSE, returns a magick image object.
 #' @return a magick image object or threshold value
 #' @author Shota Ochi
 #' @export

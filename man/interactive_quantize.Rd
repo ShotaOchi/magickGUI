@@ -21,7 +21,7 @@ interactive_quantize(image, colorspace = "rgb", dither = NULL,
 
 \item{resolution}{resolution of slider}
 
-\item{return_param}{if TRUE, returns value of max. if FALSE, returns magick image object.}
+\item{return_param}{If return_param is TRUE, returns value of max. If return_param is FALSE, returns a magick image object.}
 }
 \value{
 a magick image object or value of max

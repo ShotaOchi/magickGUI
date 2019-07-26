@@ -6,7 +6,7 @@
 #' @param range_max_radius define maximum in slider of radius. must be positive.
 #' @param range_max_sigma define maximum in slider of sigma. must be positive.
 #' @param resolution resolution of slider
-#' @param return_param if TRUE, returns values of radius and sigma. if FALSE, returns magick image object.
+#' @param return_param If return_param is TRUE, returns values of radius and sigma. If return_param is FALSE, returns a magick image object.
 #' @return a magick image object or values of radius and sigma
 #' @author Shota Ochi
 #' @export

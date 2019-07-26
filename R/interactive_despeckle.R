@@ -5,7 +5,7 @@
 #' @param image a magick image object
 #' @param range_max define maximum in slider. must be positive.
 #' @param resolution resolution of slider
-#' @param return_param if TRUE, returns value of times. if FALSE, returns magick image object.
+#' @param return_param If return_param is TRUE, returns value of times. If return_param is FALSE, returns a magick image object.
 #' @return a magick image object or value of times
 #' @author Shota Ochi
 #' @export

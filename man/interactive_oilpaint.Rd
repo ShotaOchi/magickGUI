@@ -14,7 +14,7 @@ interactive_oilpaint(image, range_max = 10, resolution = 0.1,
 
 \item{resolution}{resolution of slider}
 
-\item{return_param}{if TRUE, returns value of radius. if FALSE, returns magick image object.}
+\item{return_param}{If return_param is TRUE, returns value of radius. If return_param is FALSE, returns a magick image object.}
 }
 \value{
 a magick image object or value of radius

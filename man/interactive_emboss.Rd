@@ -16,7 +16,7 @@ interactive_emboss(image, range_max_radius = 5, range_max_sigma = 5,
 
 \item{resolution}{resolution of slider}
 
-\item{return_param}{if TRUE, returns values of radius and sigma. if FALSE, returns magick image object.}
+\item{return_param}{If return_param is TRUE, returns values of radius and sigma. If return_param is FALSE, returns a magick image object.}
 }
 \value{
 a magick image object or values of radius and sigma
