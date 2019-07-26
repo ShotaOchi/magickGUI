@@ -6,8 +6,10 @@
 NULL
 
 #' @importFrom graphics plot
+#' @importFrom magick geometry_point
 #' @importFrom magick image_blur
 #' @importFrom magick image_charcoal
+#' @importFrom magick image_composite
 #' @importFrom magick image_despeckle
 #' @importFrom magick image_emboss
 #' @importFrom magick image_implode

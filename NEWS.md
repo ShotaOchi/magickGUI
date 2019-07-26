@@ -1,5 +1,11 @@
 # magickGUI
 
+## magickGUI 1.1.0
+
+### New Function
+
+* interacitve_composite
+
 ## magickGUI 1.0.1
 
 ### Changes
