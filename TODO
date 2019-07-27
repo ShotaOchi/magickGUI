@@ -1,7 +1,6 @@
 New Functions
 
 * interactive_canny
-* interactive_chop
 * interactive_deskew
 * interactive_shadow
 * interactive_shear
