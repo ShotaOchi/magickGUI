@@ -7,7 +7,9 @@ NULL
 
 #' @importFrom graphics plot
 #' @importFrom magick geometry_point
+#' @importFrom magick geometry_size_percent
 #' @importFrom magick image_blur
+#' @importFrom magick image_canny
 #' @importFrom magick image_charcoal
 #' @importFrom magick image_composite
 #' @importFrom magick image_despeckle
@@ -61,4 +63,9 @@ get_minimum_version <- function()
   {
     packageStartupMessage(sprintf("The version of ImageMagick is %s.\nThe version of ImageMagick should be greater than or equal to %s.", version_ImageMagick, get_minimum_version()))
   }
+}
+
+geometry_canny_magickGUI <- function(radius, sigma, lower, upper)
+{
+  paste(paste(as.character(radius), as.character(sigma), sep = "x"), geometry_size_percent(lower), geometry_size_percent(upper), sep = "+")
 }

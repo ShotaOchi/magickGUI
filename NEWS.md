@@ -2,7 +2,9 @@
 
 ## magickGUI 1.1.0
 
-### New Function
+### New Functions
+
+* interacitve_canny
 
 * interacitve_composite
 
