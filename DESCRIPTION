@@ -9,7 +9,7 @@ Description: Enables us to use the functions of the package 'magick' interactive
 License: GPL-3
 Depends: 
     R (>= 3.1.2),
-    magick (>= 2.2)
+    magick (>= 2.0)
 Imports: 
     tcltk
 Suggests: 
@@ -22,4 +22,3 @@ NeedsCompilation: no
 SystemRequirements: ImageMagick (>= 6.9.5.4)
 RoxygenNote: 6.1.1
 Encoding: UTF-8
-Remotes: ropensci/magick
