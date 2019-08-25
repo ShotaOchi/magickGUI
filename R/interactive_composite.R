@@ -20,7 +20,7 @@ interactive_composite <- function(image, composite_image, operator = "atop", com
 {
   # make initial output
   iniv <- 0
-  initial <- image_composite(image, composite_image, operator, geometry_point(iniv, iniv), compose_args)
+  initial <- image_composite(image, composite_image, operator = operator, offset = geometry_point(iniv, iniv), compose_args = compose_args)
 
   # set variable range
   iminfo <- image_info(image)
@@ -66,7 +66,7 @@ interactive_composite <- function(image, composite_image, operator = "atop", com
   temp_val <- iniv
   update_image <- function()
   {
-    temp_image <- image_composite(image, composite_image, operator, geometry_point(temp_val[1], temp_val[2]), compose_args)
+    temp_image <- image_composite(image, composite_image, operator = operator, offset = geometry_point(temp_val[1], temp_val[2]), compose_args = compose_args)
     image_write(temp_image, temp)
     image_tcl <- tkimage.create("photo", "image_tcl", file = temp)
     tkconfigure(win1.im, image = image_tcl)
@@ -125,5 +125,5 @@ interactive_composite <- function(image, composite_image, operator = "atop", com
   {
     return(geometry_point(val_res[1], val_res[2]))
   }
-  return(image_composite(image, composite_image, operator, geometry_point(val_res[1], val_res[2]), compose_args))
+  return(image_composite(image, composite_image, operator = operator, offset = geometry_point(val_res[1], val_res[2]), compose_args = compose_args))
 }

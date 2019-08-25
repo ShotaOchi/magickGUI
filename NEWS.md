@@ -1,5 +1,11 @@
 # magickGUI
 
+## magickGUI 1.1.1
+
+### Bug Fixes
+
+* deal with the API change of image_composite function of magick package
+
 ## magickGUI 1.1.0
 
 ### New Functions

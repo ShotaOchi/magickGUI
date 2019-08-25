@@ -1,7 +1,7 @@
 Package: magickGUI
 Type: Package
 Title: GUI Tools for Interactive Image Processing with 'magick'
-Version: 1.1.0
+Version: 1.1.1
 Authors@R: c(
     person("Shota", "Ochi", email = "shotaochi1990@gmail.com", role = c("aut", "cre")))
 Maintainer: Shota Ochi <shotaochi1990@gmail.com>
