@@ -21,6 +21,7 @@ environment:
     USE_RTOOLS: true
     unit_test_magickGUI: true
     WARNINGS_ARE_ERRORS: 1
+    NOT_CRAN: true
 
 matrix:
   fast_finish: true
