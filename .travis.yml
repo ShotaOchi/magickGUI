@@ -5,10 +5,6 @@ sudo: false
 warnings_are_errors: true
 chache: packages
 
-os:
-  - osx
-  - linux
-
 r:
   - oldrel
   - release
@@ -21,7 +17,6 @@ bioc_packages:
   - EBImage
 
 services:
-  if: os != osx
   - xvfb
 
 before_install:
