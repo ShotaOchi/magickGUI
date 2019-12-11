@@ -20,9 +20,6 @@ jobs:
       r: release
     - os: osx
       r: oldrel
-  exclude:
-    - os: osx
-      r: devel
 
 r_packages:
   - covr
