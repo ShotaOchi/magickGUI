@@ -1,5 +1,11 @@
 # magickGUI
 
+## magickGUI 1.1.2
+
+### Changes
+
+* skip unit tests on cran
+
 ## magickGUI 1.1.1
 
 ### Bug Fixes
