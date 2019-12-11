@@ -5,6 +5,9 @@ sudo: false
 warnings_are_errors: true
 chache: packages
 
+env:
+  - NOT_CRAN=true
+
 jobs:
   include:
     - os: linux
