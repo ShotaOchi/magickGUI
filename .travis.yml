@@ -14,12 +14,18 @@ r:
   - release
   - devel
 
+jobs:
+  exclude:
+    - os: osx
+      r: devel
+
 r_packages:
   - covr
 
 bioc_packages:
   - EBImage
 
+if: os != osx
 services:
   - xvfb
 
