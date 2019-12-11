@@ -10,7 +10,19 @@ jobs:
     - os: linux
       r:
         - oldrel
+      services:
+        - xvfb
+      before_install:
+        - "export DISPLAY=:99.0"
+    - os: linux
+      r:
         - release
+      services:
+        - xvfb
+      before_install:
+        - "export DISPLAY=:99.0"
+    - os: linux
+      r:
         - devel
       services:
         - xvfb
