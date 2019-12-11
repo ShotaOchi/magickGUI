@@ -5,22 +5,24 @@ sudo: false
 warnings_are_errors: true
 chache: packages
 
-r:
-  - oldrel
-  - release
-  - devel
+jobs:
+  include:
+    - os: linux
+      r:
+        - oldrel
+        - release
+        - devel
+      services:
+        - xvfb
+      before_install:
+        - "export DISPLAY=:99.0"
+    - os: osx
 
 r_packages:
   - covr
 
 bioc_packages:
   - EBImage
-
-services:
-  - xvfb
-
-before_install:
-  - "export DISPLAY=:99.0"
 
 addons:
   apt:
