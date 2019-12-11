@@ -14,21 +14,14 @@ r:
   - release
   - devel
 
-jobs:
-  include: 
-    - os: osx
-      r: release
-    - os: osx
-      r: oldrel
-
 r_packages:
   - covr
 
 bioc_packages:
   - EBImage
 
-if: os != osx
 services:
+  if: os != osx
   - xvfb
 
 before_install:
