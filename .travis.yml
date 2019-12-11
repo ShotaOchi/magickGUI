@@ -5,12 +5,9 @@ sudo: false
 warnings_are_errors: true
 chache: packages
 
-jobs:
-  include: 
-    os:
-    - osx
-    os:
-    - linux
+os:
+  - osx
+  - linux
 
 r:
   - oldrel
