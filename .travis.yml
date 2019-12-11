@@ -16,7 +16,7 @@ r:
 
 jobs:
   exclude:
-    - os: osx
+    - if: os = osx
       r: devel
 
 r_packages:
