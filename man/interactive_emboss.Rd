@@ -4,8 +4,13 @@
 \alias{interactive_emboss}
 \title{interactive embossing}
 \usage{
-interactive_emboss(image, range_max_radius = 5, range_max_sigma = 5,
-  resolution = 0.1, return_param = FALSE)
+interactive_emboss(
+  image,
+  range_max_radius = 5,
+  range_max_sigma = 5,
+  resolution = 0.1,
+  return_param = FALSE
+)
 }
 \arguments{
 \item{image}{a magick image object}

@@ -4,8 +4,14 @@
 \alias{interactive_composite}
 \title{interactive image compositing}
 \usage{
-interactive_composite(image, composite_image, operator = "atop",
-  compose_args = "", resolution = 1, return_param = FALSE)
+interactive_composite(
+  image,
+  composite_image,
+  operator = "atop",
+  compose_args = "",
+  resolution = 1,
+  return_param = FALSE
+)
 }
 \arguments{
 \item{image}{a magick image object}

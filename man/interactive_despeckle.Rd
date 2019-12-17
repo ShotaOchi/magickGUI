@@ -4,8 +4,12 @@
 \alias{interactive_despeckle}
 \title{interactive despeckling}
 \usage{
-interactive_despeckle(image, range_max = 50, resolution = 1,
-  return_param = FALSE)
+interactive_despeckle(
+  image,
+  range_max = 50,
+  resolution = 1,
+  return_param = FALSE
+)
 }
 \arguments{
 \item{image}{a magick image object}

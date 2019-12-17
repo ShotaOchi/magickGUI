@@ -4,8 +4,13 @@
 \alias{interactive_canny}
 \title{interactive canny edge detection}
 \usage{
-interactive_canny(image, range_max_radius = 30, range_max_sigma = 2,
-  resolution = 0.1, return_param = FALSE)
+interactive_canny(
+  image,
+  range_max_radius = 30,
+  range_max_sigma = 2,
+  resolution = 0.1,
+  return_param = FALSE
+)
 }
 \arguments{
 \item{image}{a magick image object}

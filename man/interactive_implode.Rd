@@ -4,8 +4,12 @@
 \alias{interactive_implode}
 \title{interactive imploding}
 \usage{
-interactive_implode(image, range_max = 1, resolution = 0.1,
-  return_param = FALSE)
+interactive_implode(
+  image,
+  range_max = 1,
+  resolution = 0.1,
+  return_param = FALSE
+)
 }
 \arguments{
 \item{image}{a magick image object}

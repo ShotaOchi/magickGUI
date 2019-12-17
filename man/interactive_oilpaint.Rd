@@ -4,8 +4,12 @@
 \alias{interactive_oilpaint}
 \title{interactive oil painting}
 \usage{
-interactive_oilpaint(image, range_max = 10, resolution = 0.1,
-  return_param = FALSE)
+interactive_oilpaint(
+  image,
+  range_max = 10,
+  resolution = 0.1,
+  return_param = FALSE
+)
 }
 \arguments{
 \item{image}{a magick image object}

@@ -4,9 +4,15 @@
 \alias{interactive_quantize}
 \title{interactive quantization}
 \usage{
-interactive_quantize(image, colorspace = "rgb", dither = NULL,
-  treedepth = NULL, range_max = 256, resolution = 1,
-  return_param = FALSE)
+interactive_quantize(
+  image,
+  colorspace = "rgb",
+  dither = NULL,
+  treedepth = NULL,
+  range_max = 256,
+  resolution = 1,
+  return_param = FALSE
+)
 }
 \arguments{
 \item{image}{a magick image object}

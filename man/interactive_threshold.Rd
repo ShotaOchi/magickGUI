@@ -4,8 +4,13 @@
 \alias{interactive_threshold}
 \title{interactive thresholding}
 \usage{
-interactive_threshold(image, type = c("black", "white"),
-  channel = NULL, resolution = 0.1, return_param = FALSE)
+interactive_threshold(
+  image,
+  type = c("black", "white"),
+  channel = NULL,
+  resolution = 0.1,
+  return_param = FALSE
+)
 }
 \arguments{
 \item{image}{a magick image object}

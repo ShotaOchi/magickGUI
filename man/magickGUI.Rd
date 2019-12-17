@@ -3,7 +3,6 @@
 \docType{package}
 \name{magickGUI}
 \alias{magickGUI}
-\alias{magickGUI-package}
 \title{magickGUI: GUI tools for interactive image processing with 'magick'}
 \description{
 magickGUI enables us to use the functions of the package 'magick' interactively.

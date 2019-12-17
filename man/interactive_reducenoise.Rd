@@ -4,8 +4,12 @@
 \alias{interactive_reducenoise}
 \title{interactive denoising}
 \usage{
-interactive_reducenoise(image, range_max = 30, resolution = 1,
-  return_param = FALSE)
+interactive_reducenoise(
+  image,
+  range_max = 30,
+  resolution = 1,
+  return_param = FALSE
+)
 }
 \arguments{
 \item{image}{a magick image object}

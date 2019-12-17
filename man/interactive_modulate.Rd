@@ -4,9 +4,14 @@
 \alias{interactive_modulate}
 \title{interactive modulating}
 \usage{
-interactive_modulate(image, range_max_brightness = 200,
-  range_max_saturation = 200, range_max_hue = 200, resolution = 0.1,
-  return_param = FALSE)
+interactive_modulate(
+  image,
+  range_max_brightness = 200,
+  range_max_saturation = 200,
+  range_max_hue = 200,
+  resolution = 0.1,
+  return_param = FALSE
+)
 }
 \arguments{
 \item{image}{a magick image object}
