@@ -14,6 +14,7 @@ NULL
 #' @importFrom magick image_composite
 #' @importFrom magick image_despeckle
 #' @importFrom magick image_emboss
+#' @importFrom magick image_fill
 #' @importFrom magick image_implode
 #' @importFrom magick image_info
 #' @importFrom magick image_modulate
