@@ -25,7 +25,7 @@ interactive_emboss <- function(image, range_max_radius = 5, range_max_sigma = 5,
   iminfo <- image_info(image)
   range_radius <- c(0, range_max_radius)
   range_sigma <- c(0, range_max_sigma)
-  length_slider <- as.integer(iminfo["width"] * 0.6) # length of slider
+  length_slider <- as.integer(iminfo$width * 0.6) # length of slider
   if (length_slider < 200)
   {
     length_slider <- 200

@@ -28,7 +28,7 @@ interactive_fill <- function(image, color, refcolor = NULL, resolution = 0.1, re
   range_x <- c(0, iminfo$width)
   range_y <- c(0, iminfo$height)
   range_fuzz <- c(0, 100)
-  length_slider <- as.integer(iminfo["width"] * 0.6) # length of slider
+  length_slider <- as.integer(iminfo$width * 0.6) # length of slider
   if (length_slider < 200)
   {
     length_slider <- 200

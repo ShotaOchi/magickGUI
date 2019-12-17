@@ -23,7 +23,7 @@ interactive_despeckle <- function(image, range_max = 50, resolution = 1, return_
   # set variable range
   iminfo <- image_info(image)
   range_times <- c(0,range_max)
-  length_slider <- as.integer(iminfo["width"] * 0.6) # length of slider
+  length_slider <- as.integer(iminfo$width * 0.6) # length of slider
   if (length_slider < 200)
   {
     length_slider <- 200

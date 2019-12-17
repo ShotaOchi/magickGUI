@@ -29,7 +29,7 @@ interactive_canny <- function(image, range_max_radius = 30, range_max_sigma = 2,
   range_sigma <- c(0, range_max_sigma)
   range_lower <- c(0, 100)
   range_upper <- c(0, 100)
-  length_slider <- as.integer(iminfo["width"] * 0.6) # length of slider
+  length_slider <- as.integer(iminfo$width * 0.6) # length of slider
   if (length_slider < 200)
   {
     length_slider <- 200

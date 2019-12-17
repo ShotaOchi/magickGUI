@@ -27,7 +27,7 @@ interactive_composite <- function(image, composite_image, operator = "atop", com
   iminfo_composite <- image_info(composite_image)
   range_x <- c(-iminfo_composite[["width"]], iminfo[["width"]])
   range_y <- c(-iminfo_composite[["height"]], iminfo[["height"]])
-  length_slider <- as.integer(iminfo["width"] * 0.6) # length of slider
+  length_slider <- as.integer(iminfo$width * 0.6) # length of slider
   if (length_slider < 200)
   {
     length_slider <- 200

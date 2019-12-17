@@ -27,7 +27,7 @@ interactive_modulate <- function(image, range_max_brightness = 200, range_max_sa
   range_brightness <- c(0, range_max_brightness)
   range_saturation <- c(0, range_max_saturation)
   range_hue <- c(0, range_max_hue)
-  length_slider <- as.integer(iminfo["width"] * 0.6) # length of slider
+  length_slider <- as.integer(iminfo$width * 0.6) # length of slider
   if (length_slider < 200)
   {
     length_slider <- 200
