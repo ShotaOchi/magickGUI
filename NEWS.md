@@ -4,6 +4,7 @@
 
 ### New Functions
 
+* interactive_annotate
 * interactive_fill
 
 ## magickGUI 1.1.1

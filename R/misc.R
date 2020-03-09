@@ -8,6 +8,7 @@ NULL
 #' @importFrom graphics plot
 #' @importFrom magick geometry_point
 #' @importFrom magick geometry_size_percent
+#' @importFrom magick image_annotate
 #' @importFrom magick image_blur
 #' @importFrom magick image_canny
 #' @importFrom magick image_charcoal
