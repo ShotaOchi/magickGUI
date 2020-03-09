@@ -6,8 +6,8 @@
 #' @param color a valid color string such as "navyblue" or "#000080". Use "none" for transparency.
 #' @param refcolor if set, fuzz color distance will be measured against this color, not the color of the starting point. Any color (within fuzz color distance of the given refcolor), connected to starting point will be replaced with the color. If the pixel at the starting point does not itself match the given refcolor (according to fuzz) then no action will be taken.
 #' @param resolution resolution of slider of fuzz
-#' @param return_param If return_param is TRUE, returns values of point and fuzz. If return_param is FALSE, returns a magick image object.
-#' @return a magick image object or list of values of point and fuzz
+#' @param return_param If return_param is TRUE, returns a list values of point and fuzz. If return_param is FALSE, returns a magick image object.
+#' @return a magick image object or a list of values of point and fuzz
 #' @author Shota Ochi
 #' @export
 #' @examples

@@ -21,10 +21,10 @@ interactive_fill(
 
 \item{resolution}{resolution of slider of fuzz}
 
-\item{return_param}{If return_param is TRUE, returns values of point and fuzz. If return_param is FALSE, returns a magick image object.}
+\item{return_param}{If return_param is TRUE, returns a list values of point and fuzz. If return_param is FALSE, returns a magick image object.}
 }
 \value{
-a magick image object or list of values of point and fuzz
+a magick image object or a list of values of point and fuzz
 }
 \description{
 Using image_fill of 'magick' interactively.
