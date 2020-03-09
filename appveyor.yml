@@ -17,6 +17,7 @@ platform: x64
 
 environment:
   R_ARCH: x64
+  R_VERSION: release
   global:
     USE_RTOOLS: true
     unit_test_magickGUI: true
