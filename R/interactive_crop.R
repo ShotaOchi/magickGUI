@@ -8,7 +8,7 @@
 #' @author Shota Ochi
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' interactive_crop(wizard)
 #' }
 interactive_crop <- function(image, color = "white", return_param = FALSE)

@@ -11,7 +11,7 @@
 #' @author Shota Ochi
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' interactive_blur(wizard)
 #' }
 interactive_blur <- function(image, range_max_radius = 5, range_max_sigma = 5, resolution = 0.1, return_param = FALSE)

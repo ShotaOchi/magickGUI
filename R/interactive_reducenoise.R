@@ -10,7 +10,7 @@
 #' @author Shota Ochi
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' interactive_reducenoise(wizard)
 #' }
 interactive_reducenoise <- function(image, range_max = 30, resolution = 1, return_param = FALSE)

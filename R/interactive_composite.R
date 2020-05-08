@@ -12,7 +12,7 @@
 #' @author Shota Ochi
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' interactive_composite(wizard, rose)
 #' }
 interactive_composite <- function(image, composite_image, operator = "atop", compose_args = "", resolution = 1, return_param = FALSE)
