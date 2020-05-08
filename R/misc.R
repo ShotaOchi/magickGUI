@@ -6,13 +6,16 @@
 NULL
 
 #' @importFrom graphics plot
+#' @importFrom magick geometry_area
 #' @importFrom magick geometry_point
 #' @importFrom magick geometry_size_percent
 #' @importFrom magick image_annotate
+#' @importFrom magick image_blank
 #' @importFrom magick image_blur
 #' @importFrom magick image_canny
 #' @importFrom magick image_charcoal
 #' @importFrom magick image_composite
+#' @importFrom magick image_crop
 #' @importFrom magick image_despeckle
 #' @importFrom magick image_emboss
 #' @importFrom magick image_fill
