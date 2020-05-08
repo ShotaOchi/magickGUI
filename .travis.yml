@@ -4,6 +4,10 @@ language: r
 warnings_are_errors: true
 cache: packages
 
+env:
+  global:
+    - _R_CHECK_DONTTEST_EXAMPLES_=false
+
 jobs:
   include:
     - os: linux
@@ -27,7 +31,7 @@ jobs:
         - xvfb
       before_install:
         - "export DISPLAY=:99.0"
-    - os: osx
+   # - os: osx    ### don't test on os x because ps package is unavailable at the moment
 
 r_packages:
   - covr
