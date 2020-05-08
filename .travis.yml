@@ -1,9 +1,12 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
 language: r
-sudo: false
 warnings_are_errors: true
-chache: packages
+cache: packages
+
+env:
+  global:
+    - R_CHECK_ARGS="--no-examples"
 
 jobs:
   include:
