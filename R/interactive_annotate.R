@@ -20,7 +20,7 @@
 #' @author Shota Ochi
 #' @export
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' interactive_annotate(wizard, "hello")
 #' }
 interactive_annotate <- function(image, text, gravity = "northwest", font = "", style = "normal", decoration = NULL, color = NULL, strokecolor = NULL, boxcolor = NULL, range_max_size = 1000, range_max_weight = 850, range_max_kerning = 300, resolution = 0.1, return_param = FALSE)

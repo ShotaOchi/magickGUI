@@ -13,7 +13,7 @@
 #' @author Shota Ochi
 #' @export
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' interactive_quantize(wizard)
 #' }
 interactive_quantize <- function(image, colorspace = "rgb", dither = NULL, treedepth = NULL, range_max = 256, resolution = 1, return_param = FALSE)

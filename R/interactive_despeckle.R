@@ -10,7 +10,7 @@
 #' @author Shota Ochi
 #' @export
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' interactive_despeckle(wizard)
 #' }
 interactive_despeckle <- function(image, range_max = 50, resolution = 1, return_param = FALSE)
