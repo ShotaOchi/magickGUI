@@ -15,7 +15,6 @@
 #' \donttest{
 #' interactive_composite(wizard, rose)
 #' }
-
 interactive_composite <- function(image, composite_image, operator = "atop", compose_args = "", resolution = 1, return_param = FALSE)
 {
   # make initial output

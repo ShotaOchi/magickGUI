@@ -14,7 +14,6 @@
 #' \donttest{
 #' interactive_fill(wizard, "black")
 #' }
-
 interactive_fill <- function(image, color, refcolor = NULL, resolution = 0.1, return_param = FALSE)
 {
   # make initial output

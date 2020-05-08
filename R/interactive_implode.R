@@ -13,7 +13,6 @@
 #' \donttest{
 #' interactive_implode(wizard)
 #' }
-
 interactive_implode <- function(image, range_max = 1, resolution = 0.1, return_param = FALSE)
 {
   # make initial output

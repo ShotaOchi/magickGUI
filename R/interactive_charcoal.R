@@ -14,7 +14,6 @@
 #' \donttest{
 #' interactive_charcoal(wizard)
 #' }
-
 interactive_charcoal <- function(image, range_max_radius = 5, range_max_sigma = 5, resolution = 0.1, return_param = FALSE)
 {
   # make initial output

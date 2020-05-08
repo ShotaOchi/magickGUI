@@ -14,7 +14,6 @@
 #' \donttest{
 #' interactive_threshold(wizard)
 #' }
-
 interactive_threshold <- function(image, type = c("black", "white"), channel = NULL, resolution = 0.1, return_param = FALSE)
 {
   # make initial output

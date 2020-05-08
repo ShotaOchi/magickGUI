@@ -13,7 +13,6 @@
 #' \donttest{
 #' interactive_oilpaint(wizard)
 #' }
-
 interactive_oilpaint <- function(image, range_max = 10, resolution = 0.1, return_param = FALSE)
 {
   # make initial output
