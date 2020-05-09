@@ -22,6 +22,7 @@ environment:
     USE_RTOOLS: true
     unit_test_magickGUI: true
     WARNINGS_ARE_ERRORS: 1
+    _R_CHECK_DONTTEST_EXAMPLES_: false
 
 matrix:
   fast_finish: true
