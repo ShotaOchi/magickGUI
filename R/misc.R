@@ -46,14 +46,14 @@ NULL
 wait_time <- function()
 {
   wait_start <- proc.time()[3]
-  wait_time <- 0.5 # sec
+  wait_time <- 0.1 # sec
   while (proc.time()[3] - wait_start < wait_time) {}
 }
 
 wait_time_long <- function()
 {
   wait_start <- proc.time()[3]
-  wait_time <- 1.0 # sec
+  wait_time <- 0.5 # sec
   while (proc.time()[3] - wait_start < wait_time) {}
 }
 
