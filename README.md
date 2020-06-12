@@ -6,6 +6,16 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![codecov](https://codecov.io/gh/ShotaOchi/magickGUI/branch/master/graph/badge.svg)](https://codecov.io/gh/ShotaOchi/magickGUI)
 
+## Note
+
+magickGUI doesn't work on R 4.0.1.
+
+R crushes when a function of magickGUI is called.
+
+However, magickGUI works fine on R 4.0.0.
+
+I don't know how to fix the bug because I can't find a cause of the bug in [CHANGES IN R 4.0.1](https://cran.r-project.org/doc/manuals/r-release/NEWS.html).
+
 ## Purpose
 The purpose of magickGUI is to enable us to use the functions of the package 'magick' interactively.
 
