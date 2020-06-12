@@ -8,13 +8,26 @@
 
 ## Note
 
-magickGUI doesn't work on R 4.0.1.
+magickGUI doesn't work on R 4.0.1 for Windows, although magickGUI works fine on R 4.0.0 for Windows.
 
-R crushes when a function of magickGUI is called.
+R 4.0.1 for Windows crushes when a function of magickGUI is called.
 
-However, magickGUI works fine on R 4.0.0.
+This is because CRAN doesn't maintain tcltk package.
 
-I don't know how to fix the bug because I can't find a cause of the bug in [CHANGES IN R 4.0.1](https://cran.r-project.org/doc/manuals/r-release/NEWS.html).
+The cause of the bug is tkimage.create function of tcltk package.
+
+R 4.0.1 for Windows crushes when running the code below.
+```
+library(tcltk)
+library(magick)
+temp <- tempfile(fileext = ".jpg")
+image_write(wizard, temp)
+image_tcl <- tkimage.create("photo", "image_tcl", file = temp)
+```
+
+I can do nothing about the bug in tcltk package.
+
+Don't use R 4.0.1 for Windows if you use magickGUI package.
 
 ## Purpose
 The purpose of magickGUI is to enable us to use the functions of the package 'magick' interactively.
