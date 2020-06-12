@@ -16,6 +16,7 @@ cache:
 platform: x64
 
 environment:
+  R_VERSION: 4.0.0
   R_ARCH: x64
   R_VERSION: release
   global:
