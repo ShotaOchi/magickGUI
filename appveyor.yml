@@ -16,9 +16,8 @@ cache:
 platform: x64
 
 environment:
-  R_VERSION: 4.0.0
   R_ARCH: x64
-  R_VERSION: release
+  R_VERSION: 4.0.0
   global:
     USE_RTOOLS: true
     unit_test_magickGUI: true
