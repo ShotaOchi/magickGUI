@@ -118,7 +118,7 @@ interactive_canny <- function(image, range_max_radius = 30, range_max_sigma = 2,
     {
       wait_test <- FALSE
       tryCatch({
-        tkinvoke(win1.button)
+        tkwm.state(win1)
       },
       error = function(e) assign("wait_test", TRUE, inherits = TRUE)
       )

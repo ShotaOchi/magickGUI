@@ -103,7 +103,7 @@ interactive_modulate <- function(image, range_max_brightness = 200, range_max_sa
     {
       wait_test <- FALSE
       tryCatch({
-        tkinvoke(win1.button)
+        tkwm.state(win1)
       },
       error = function(e) assign("wait_test", TRUE, inherits = TRUE)
       )
