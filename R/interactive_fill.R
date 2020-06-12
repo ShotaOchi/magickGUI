@@ -105,7 +105,7 @@ interactive_fill <- function(image, color, refcolor = NULL, resolution = 0.1, re
     {
       wait_test <- FALSE
       tryCatch({
-        tkwm.state(win1)
+        tkinvoke(win1.button)
       },
       error = function(e) assign("wait_test", TRUE, inherits = TRUE)
       )

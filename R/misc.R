@@ -35,6 +35,7 @@ NULL
 #' @importFrom tcltk tkdestroy
 #' @importFrom tcltk tkframe
 #' @importFrom tcltk tkimage.create
+#' @importFrom tcltk tkinvoke
 #' @importFrom tcltk tklabel
 #' @importFrom tcltk tkpack
 #' @importFrom tcltk tkscale
