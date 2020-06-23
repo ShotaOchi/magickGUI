@@ -10,7 +10,7 @@
 
 magickGUI doesn't work on R 4.0.1 for Windows although magickGUI works fine on R 4.0.2 for Windows.
 
-It's the CRAN's fault.
+It's CRAN's fault.
 
 I can do nothing about it.
 
