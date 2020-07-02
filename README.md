@@ -8,6 +8,17 @@
 
 ## Note
 
+### Functions of magickGUI package may fail to recognize magick-image object
+
+A solution is to convert a magick-image object into png.
+```
+library(magickGUI)
+a <- image_read("test.jpg") %>% image_convert(format = "png")
+interactive_reducenoise(a)
+```
+
+### Functions of magickGUI package doesn't work on R 4.0.1 for Windows
+
 magickGUI doesn't work on R 4.0.1 for Windows although magickGUI works fine on R 4.0.2 for Windows.
 
 It's CRAN's fault.
