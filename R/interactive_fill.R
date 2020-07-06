@@ -16,6 +16,9 @@
 #' }
 interactive_fill <- function(image, color, refcolor = NULL, resolution = 0.1, return_param = FALSE)
 {
+  # image must be convreted into png because of the bug in tcltk package
+  image <- image_convert(image, format = "png")
+  
   # make initial output
   inix <- 1
   iniy <- 1

@@ -15,6 +15,9 @@
 #' }
 interactive_oilpaint <- function(image, range_max = 10, resolution = 0.1, return_param = FALSE)
 {
+  # image must be convreted into png because of the bug in tcltk package
+  image <- image_convert(image, format = "png")
+  
   # make initial output
   iniv <- 0
   initial <- image_oilpaint(image, iniv)

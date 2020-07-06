@@ -16,6 +16,9 @@
 #' }
 interactive_canny <- function(image, range_max_radius = 30, range_max_sigma = 2, resolution = 0.1, return_param = FALSE)
 {
+  # image must be convreted into png because of the bug in tcltk package
+  image <- image_convert(image, format = "png")
+  
   # make initial output
   iniv_radius <- 0
   iniv_sigma <- 1

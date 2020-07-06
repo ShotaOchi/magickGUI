@@ -13,6 +13,9 @@
 #' }
 interactive_crop <- function(image, color = "white", return_param = FALSE)
 {
+  # image must be convreted into png because of the bug in tcltk package
+  image <- image_convert(image, format = "png")
+  
   if (color == "none")
   {
     stop("setting color as none is not allowed.")

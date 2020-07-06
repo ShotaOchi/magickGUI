@@ -18,6 +18,9 @@
 #' }
 interactive_quantize <- function(image, colorspace = "rgb", dither = NULL, treedepth = NULL, range_max = 256, resolution = 1, return_param = FALSE)
 {
+  # image must be convreted into png because of the bug in tcltk package
+  image <- image_convert(image, format = "png")
+  
   # make initial output
   iniv <- 0
   initial <- image_quantize(image, iniv, colorspace = colorspace, dither = dither, treedepth = treedepth)

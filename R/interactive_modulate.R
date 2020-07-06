@@ -17,6 +17,9 @@
 #' }
 interactive_modulate <- function(image, range_max_brightness = 200, range_max_saturation = 200, range_max_hue = 200, resolution = 0.1, return_param = FALSE)
 {
+  # image must be convreted into png because of the bug in tcltk package
+  image <- image_convert(image, format = "png")
+  
   # make initial output
   iniv <- 100
   initial <- image_modulate(image, iniv, iniv, iniv)

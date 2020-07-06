@@ -17,6 +17,9 @@
 #' }
 interactive_composite <- function(image, composite_image, operator = "atop", compose_args = "", resolution = 1, return_param = FALSE)
 {
+  # image must be convreted into png because of the bug in tcltk package
+  image <- image_convert(image, format = "png")
+  
   # make initial output
   iniv <- 0
   initial <- image_composite(image, composite_image, operator = operator, offset = geometry_point(iniv, iniv), compose_args = compose_args)
