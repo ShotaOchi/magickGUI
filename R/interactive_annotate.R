@@ -25,8 +25,9 @@
 #' }
 interactive_annotate <- function(image, text, gravity = "northwest", font = "", style = "normal", decoration = NULL, color = NULL, strokecolor = NULL, boxcolor = NULL, range_max_size = 1000, range_max_weight = 850, range_max_kerning = 300, resolution = 0.1, return_param = FALSE)
 {
-  # image must be convreted into png because of the bug in tcltk package
-  image <- image_convert(image, format = "png")
+  # image must be convreted into png to avoid the error of tkimage.create function
+  image_original <- image
+  image <- as.list(image)[[1]] %>% image_convert(format = "png")
   
   # make initial output
   inix <- 0
@@ -199,5 +200,5 @@ interactive_annotate <- function(image, text, gravity = "northwest", font = "", 
   {
     return(val_res)
   }
-  return(image_annotate(image, text, gravity, val_res[[1]], val_res[[2]], val_res[[3]], font, style, val_res[[4]], val_res[[5]], decoration, color, strokecolor, boxcolor))
+  return(image_annotate(image_original, text, gravity, val_res[[1]], val_res[[2]], val_res[[3]], font, style, val_res[[4]], val_res[[5]], decoration, color, strokecolor, boxcolor))
 }

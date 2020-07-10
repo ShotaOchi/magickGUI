@@ -17,8 +17,9 @@
 #' }
 interactive_modulate <- function(image, range_max_brightness = 200, range_max_saturation = 200, range_max_hue = 200, resolution = 0.1, return_param = FALSE)
 {
-  # image must be convreted into png because of the bug in tcltk package
-  image <- image_convert(image, format = "png")
+  # image must be convreted into png to avoid the error of tkimage.create function
+  image_original <- image
+  image <- as.list(image)[[1]] %>% image_convert(format = "png")
   
   # make initial output
   iniv <- 100
@@ -142,5 +143,5 @@ interactive_modulate <- function(image, range_max_brightness = 200, range_max_sa
   {
     return(val_res)
   }
-  return(image_modulate(image, val_res[1], val_res[2], val_res[3]))
+  return(image_modulate(image_original, val_res[1], val_res[2], val_res[3]))
 }

@@ -16,8 +16,9 @@
 #' }
 interactive_emboss <- function(image, range_max_radius = 5, range_max_sigma = 5, resolution = 0.1, return_param = FALSE)
 {
-  # image must be convreted into png because of the bug in tcltk package
-  image <- image_convert(image, format = "png")
+  # image must be convreted into png to avoid the error of tkimage.create function
+  image_original <- image
+  image <- as.list(image)[[1]] %>% image_convert(format = "png")
   
   # make initial output
   iniv <- 0
@@ -125,5 +126,5 @@ interactive_emboss <- function(image, range_max_radius = 5, range_max_sigma = 5,
   {
     return(val_res)
   }
-  return(image_emboss(image, val_res[1], val_res[2]))
+  return(image_emboss(image_original, val_res[1], val_res[2]))
 }

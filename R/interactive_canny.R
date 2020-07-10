@@ -16,8 +16,9 @@
 #' }
 interactive_canny <- function(image, range_max_radius = 30, range_max_sigma = 2, resolution = 0.1, return_param = FALSE)
 {
-  # image must be convreted into png because of the bug in tcltk package
-  image <- image_convert(image, format = "png")
+  # image must be convreted into png to avoid the error of tkimage.create function
+  image_original <- image
+  image <- as.list(image)[[1]] %>% image_convert(format = "png")
   
   # make initial output
   iniv_radius <- 0
@@ -158,5 +159,5 @@ interactive_canny <- function(image, range_max_radius = 30, range_max_sigma = 2,
   {
     return(geometry_canny_magickGUI(val_res[1], val_res[2], val_res[3], val_res[4]))
   }
-  return(image_canny(image, geometry_canny_magickGUI(val_res[1], val_res[2], val_res[3], val_res[4])))
+  return(image_canny(image_original, geometry_canny_magickGUI(val_res[1], val_res[2], val_res[3], val_res[4])))
 }

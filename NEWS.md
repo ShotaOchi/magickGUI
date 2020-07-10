@@ -1,5 +1,9 @@
 # magickGUI
 
+## magickGUI 1.2.1
+
+* deal with the error of tkimage.create function of tcltk package
+
 ## magickGUI 1.2.0
 
 ### New Functions

@@ -13,8 +13,9 @@
 #' }
 interactive_crop <- function(image, color = "white", return_param = FALSE)
 {
-  # image must be convreted into png because of the bug in tcltk package
-  image <- image_convert(image, format = "png")
+  # image must be convreted into png to avoid the error of tkimage.create function
+  image_original <- image
+  image <- as.list(image)[[1]] %>% image_convert(format = "png")
   
   if (color == "none")
   {
@@ -170,5 +171,5 @@ interactive_crop <- function(image, color = "white", return_param = FALSE)
   {
     return(val_res)
   }
-  return(image_crop(image, val_res))
+  return(image_crop(image_original, val_res))
 }
