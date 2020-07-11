@@ -11,5 +11,4 @@ test_that("interactive_annotate",
   expected <- image_annotate(img, txt, location = geometry_point(inix, iniy), degrees = inidegrees, size = inisize, weight = iniweight, kerning = inikerning)
   expect_equal(expected, interactive_annotate(img, txt))
   expect_equal(iniv, interactive_annotate(img, txt, return_param = TRUE))
-  expect_equal(expected, interactive_annotate(img, txt, scale = scale1))
 })

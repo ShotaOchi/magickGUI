@@ -18,8 +18,7 @@ interactive_annotate(
   range_max_weight = 850,
   range_max_kerning = 300,
   resolution = 0.1,
-  return_param = FALSE,
-  scale
+  return_param = FALSE
 )
 }
 \arguments{
@@ -50,8 +49,6 @@ interactive_annotate(
 \item{resolution}{resolution of slider}
 
 \item{return_param}{If return_param is TRUE, returns a list of values of location, degrees, size, weight, and kerning. If return_param is FALSE, returns a magick image object.}
-
-\item{scale}{geometry to be passed to image_scale function of magick package. image is scaled just for preview and result image is not scaled if scale is given.}
 }
 \value{
 a magick image object or a list of values of location, degrees, size, weight, and kerning

@@ -6,5 +6,4 @@ test_that("interactive_fill",
   expect_equal(expected, interactive_fill(img, color))
   expect_equal(iniv[[1]], interactive_fill(img, color, return_param = TRUE)[[1]])
   expect_equal(iniv[[2]], interactive_fill(img, color, return_param = TRUE)[[2]])
-  expect_equal(expected, interactive_fill(img, color, scale = scale1))
 })
