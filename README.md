@@ -10,7 +10,14 @@
 
 ### Functions of magickGUI package may fail to recognize magick-image object
 
-A solution is to convert a magick-image object into png.
+There are two solutions.
+
+One is to update magickGUI package.
+```
+devtools::install_github("ShotaOchi/magickGUI")
+```
+
+Another is to convert a magick-image object into png.
 ```
 library(magickGUI)
 a <- image_read("test.jpg") %>% image_convert(format = "png")
