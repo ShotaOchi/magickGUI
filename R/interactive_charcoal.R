@@ -7,6 +7,7 @@
 #' @param range_max_sigma define maximum in slider of sigma. must be positive.
 #' @param resolution resolution of slider
 #' @param return_param If return_param is TRUE, returns values of radius and sigma. If return_param is FALSE, returns a magick image object.
+#' @param scale geometry to be passed to image_scale function of magick package. image is scaled just for preview and result image is not scaled if scale is given.
 #' @return a magick image object or values of radius and sigma
 #' @author Shota Ochi
 #' @export
@@ -14,11 +15,15 @@
 #' \donttest{
 #' interactive_charcoal(wizard)
 #' }
-interactive_charcoal <- function(image, range_max_radius = 5, range_max_sigma = 5, resolution = 0.1, return_param = FALSE)
+interactive_charcoal <- function(image, range_max_radius = 5, range_max_sigma = 5, resolution = 0.1, return_param = FALSE, scale)
 {
   # image must be convreted into png to avoid the error of tkimage.create function
   image_original <- image
-  image <- as.list(image)[[1]] %>% image_convert(format = "png")
+  image <- image_convert(as.list(image)[[1]], format = "png")
+  if (!missing(scale))
+  {
+    image <- image_scale(image, scale)
+  }
   
   # make initial output
   iniv <- 0

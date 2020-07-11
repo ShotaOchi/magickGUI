@@ -8,7 +8,8 @@ interactive_oilpaint(
   image,
   range_max = 10,
   resolution = 0.1,
-  return_param = FALSE
+  return_param = FALSE,
+  scale
 )
 }
 \arguments{
@@ -19,6 +20,8 @@ interactive_oilpaint(
 \item{resolution}{resolution of slider}
 
 \item{return_param}{If return_param is TRUE, returns value of radius. If return_param is FALSE, returns a magick image object.}
+
+\item{scale}{geometry to be passed to image_scale function of magick package. image is scaled just for preview and result image is not scaled if scale is given.}
 }
 \value{
 a magick image object or value of radius

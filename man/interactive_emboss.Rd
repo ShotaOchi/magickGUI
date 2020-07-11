@@ -9,7 +9,8 @@ interactive_emboss(
   range_max_radius = 5,
   range_max_sigma = 5,
   resolution = 0.1,
-  return_param = FALSE
+  return_param = FALSE,
+  scale
 )
 }
 \arguments{
@@ -22,6 +23,8 @@ interactive_emboss(
 \item{resolution}{resolution of slider}
 
 \item{return_param}{If return_param is TRUE, returns values of radius and sigma. If return_param is FALSE, returns a magick image object.}
+
+\item{scale}{geometry to be passed to image_scale function of magick package. image is scaled just for preview and result image is not scaled if scale is given.}
 }
 \value{
 a magick image object or values of radius and sigma

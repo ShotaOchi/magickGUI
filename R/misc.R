@@ -26,6 +26,7 @@ NULL
 #' @importFrom magick image_oilpaint
 #' @importFrom magick image_quantize
 #' @importFrom magick image_reducenoise
+#' @importFrom magick image_scale
 #' @importFrom magick image_threshold
 #' @importFrom magick image_write
 #' @importFrom magick magick_config

@@ -5,4 +5,5 @@ test_that("interactive_modulate",
   expected <- image_modulate(img, iniv[1], iniv[2], iniv[3])
   expect_equal(expected, interactive_modulate(img))
   expect_equal(iniv, interactive_modulate(img, return_param = TRUE))
+  expect_equal(expected, interactive_modulate(img, scale = scale1))
 })

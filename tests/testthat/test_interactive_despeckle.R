@@ -5,4 +5,5 @@ test_that("interactive_despeckle",
   expected <- image_despeckle(img, iniv)
   expect_equal(expected, interactive_despeckle(img))
   expect_equal(iniv, interactive_despeckle(img, return_param = TRUE))
+  expect_equal(expected, interactive_despeckle(img, scale = scale1))
 })

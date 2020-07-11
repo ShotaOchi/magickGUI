@@ -10,7 +10,8 @@ interactive_modulate(
   range_max_saturation = 200,
   range_max_hue = 200,
   resolution = 0.1,
-  return_param = FALSE
+  return_param = FALSE,
+  scale
 )
 }
 \arguments{
@@ -25,6 +26,8 @@ interactive_modulate(
 \item{resolution}{resolution of slider}
 
 \item{return_param}{If return_param is TRUE, returns values of brightness and saturation and hue. If return_param is FALSE, returns a magick image object.}
+
+\item{scale}{geometry to be passed to image_scale function of magick package. image is scaled just for preview and result image is not scaled if scale is given.}
 }
 \value{
 a magick image object or values of brightness and saturation

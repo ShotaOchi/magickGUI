@@ -19,9 +19,9 @@ interactive_composite <- function(image, composite_image, operator = "atop", com
 {
   # image must be convreted into png to avoid the error of tkimage.create function
   image_original <- image
-  image <- as.list(image)[[1]] %>% image_convert(format = "png")
+  image <- image_convert(as.list(image)[[1]], format = "png")
   composite_image_original <- composite_image
-  composite_image <- as.list(composite_image)[[1]] %>% image_convert(format = "png")
+  composite_image <- image_convert(as.list(composite_image)[[1]], format = "png")
   
   # make initial output
   iniv <- 0

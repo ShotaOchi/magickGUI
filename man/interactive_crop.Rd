@@ -4,7 +4,7 @@
 \alias{interactive_crop}
 \title{interactive cropping}
 \usage{
-interactive_crop(image, color = "white", return_param = FALSE)
+interactive_crop(image, color = "white", return_param = FALSE, scale)
 }
 \arguments{
 \item{image}{a magick image object}
@@ -12,6 +12,8 @@ interactive_crop(image, color = "white", return_param = FALSE)
 \item{color}{color of background. a valid color string such as "navyblue" or "#000080". "none" is not allowed.}
 
 \item{return_param}{If return_param is TRUE, returns a value of geometry. If return_param is FALSE, returns a magick image object.}
+
+\item{scale}{geometry to be passed to image_scale function of magick package. image is scaled just for preview and result image is not scaled if scale is given.}
 }
 \value{
 a magick image object or a value of geometry.

@@ -5,4 +5,5 @@ test_that("interactive_reducenoise",
   expected <- image_reducenoise(img, iniv)
   expect_equal(expected, interactive_reducenoise(img))
   expect_equal(iniv, interactive_reducenoise(img, return_param = TRUE))
+  expect_equal(expected, interactive_reducenoise(img, scale = scale1))
 })

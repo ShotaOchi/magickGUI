@@ -5,4 +5,5 @@ test_that("interactive_oilpaint",
   expected <- image_oilpaint(img, iniv)
   expect_equal(expected, interactive_oilpaint(img))
   expect_equal(iniv, interactive_oilpaint(img, return_param = TRUE))
+  expect_equal(expected, interactive_oilpaint(img, scale = scale1))
 })

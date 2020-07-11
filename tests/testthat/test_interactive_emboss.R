@@ -5,4 +5,5 @@ test_that("interactive_emboss",
   expected <- image_emboss(img, iniv[1], iniv[2])
   expect_equal(expected, interactive_emboss(img))
   expect_equal(iniv, interactive_emboss(img, return_param = TRUE))
+  expect_equal(expected, interactive_emboss(img, scale = scale1))
 })

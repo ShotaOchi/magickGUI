@@ -9,7 +9,8 @@ interactive_threshold(
   type = c("black", "white"),
   channel = NULL,
   resolution = 0.1,
-  return_param = FALSE
+  return_param = FALSE,
+  scale
 )
 }
 \arguments{
@@ -22,6 +23,8 @@ interactive_threshold(
 \item{resolution}{resolution of slider}
 
 \item{return_param}{If return_param is TRUE, returns threshold value. If return_param is FALSE, returns a magick image object.}
+
+\item{scale}{geometry to be passed to image_scale function of magick package. image is scaled just for preview and result image is not scaled if scale is given.}
 }
 \value{
 a magick image object or threshold value

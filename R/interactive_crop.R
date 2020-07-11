@@ -4,6 +4,7 @@
 #' @param image a magick image object
 #' @param color color of background. a valid color string such as "navyblue" or "#000080". "none" is not allowed.
 #' @param return_param If return_param is TRUE, returns a value of geometry. If return_param is FALSE, returns a magick image object.
+#' @param scale geometry to be passed to image_scale function of magick package. image is scaled just for preview and result image is not scaled if scale is given.
 #' @return a magick image object or a value of geometry.
 #' @author Shota Ochi
 #' @export
@@ -11,11 +12,15 @@
 #' \donttest{
 #' interactive_crop(wizard)
 #' }
-interactive_crop <- function(image, color = "white", return_param = FALSE)
+interactive_crop <- function(image, color = "white", return_param = FALSE, scale)
 {
   # image must be convreted into png to avoid the error of tkimage.create function
   image_original <- image
-  image <- as.list(image)[[1]] %>% image_convert(format = "png")
+  image <- image_convert(as.list(image)[[1]], format = "png")
+  if (!missing(scale))
+  {
+    image <- image_scale(image, scale)
+  }
   
   if (color == "none")
   {

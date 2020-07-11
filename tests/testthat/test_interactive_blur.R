@@ -5,4 +5,5 @@ test_that("interactive_blur",
   expected <- image_blur(img, iniv[1], iniv[2])
   expect_equal(expected, interactive_blur(img))
   expect_equal(iniv, interactive_blur(img, return_param = TRUE))
+  expect_equal(expected, interactive_blur(img, scale = scale1))
 })

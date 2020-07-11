@@ -7,5 +7,6 @@ test_that("interactive_crop",
   expected <- image_crop(img, iniv)
   expect_equal(expected, interactive_crop(img))
   expect_equal(iniv, interactive_crop(img, return_param = TRUE))
+  expect_equal(expected, interactive_crop(img, scale = scale1))
   expect_error(interactive_crop(img, color = "none"))
 })
