@@ -103,7 +103,8 @@ interactive_charcoal <- function(image, range_max_radius = 5, range_max_sigma = 
       error = function(e) assign("wait_test", TRUE, inherits = TRUE)
       )
     }
-    wait_time()
+    wait_time_long()
+    tkdestroy(win1.button)
   }
   tkwm.state(win1, "normal")
   while (TRUE)
