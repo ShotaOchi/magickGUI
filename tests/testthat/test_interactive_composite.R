@@ -4,4 +4,5 @@ test_that("interactive_composite",
   expected <- image_composite(img, img2, offset = iniv)
   expect_equal(expected, interactive_composite(img, img2))
   expect_equal(iniv, interactive_composite(img, img2, return_param = TRUE))
+  expect_equal(expected, interactive_composite(img, img2, scale = scale1))
 })

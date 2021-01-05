@@ -4,6 +4,7 @@
 #' @param image a magick image object
 #' @param color color of background. a valid color string such as "navyblue" or "#000080". "none" is not allowed.
 #' @param return_param If return_param is TRUE, returns a value of geometry. If return_param is FALSE, returns a magick image object.
+#' @param scale geometry to be passed to image_scale function of magick package. image is scaled just for preview and result image is not scaled if scale is given.
 #' @return a magick image object or a value of geometry.
 #' @author Shota Ochi
 #' @export
@@ -11,7 +12,7 @@
 #' \donttest{
 #' interactive_crop(wizard)
 #' }
-interactive_crop <- function(image, color = "white", return_param = FALSE)
+interactive_crop <- function(image, color = "white", return_param = FALSE, scale)
 {
   # image must be convreted into png to avoid the error of tkimage.create function
   image_original <- image
@@ -31,6 +32,7 @@ interactive_crop <- function(image, color = "white", return_param = FALSE)
   blank <- image_blank(iminfo["width"], iminfo["height"], color = color)
   pre_initial <- image_crop(image, geometry_area(iniwidth, iniheight, inix, iniy))
   initial <- image_composite(blank, pre_initial, offset = geometry_point(inix, iniy))
+  is_missing_scale <- missing(scale)
 
   # set variable range
   range_x <- c(0, iminfo$width - 1)
@@ -49,11 +51,23 @@ interactive_crop <- function(image, color = "white", return_param = FALSE)
   quit_waiting <- !is.null(getOption("unit_test_magickGUI"))
   temp <- tempfile(fileext = ".jpg")
   on.exit(unlink(temp), add = TRUE)
-  image_write(initial, temp)
+  if (!is_missing_scale)
+  {
+    image_write(image_scale(initial, scale), temp)
+  } else
+  {
+    image_write(initial, temp)
+  }
   image_tcl <- tkimage.create("photo", "image_tcl", file = temp)
   temp2 <- tempfile(fileext = ".jpg")
   on.exit(unlink(temp2), add = TRUE)
-  image_write(image, temp2)
+  if (!is_missing_scale)
+  {
+    image_write(image_scale(image, scale), temp2)
+  } else
+  {
+    image_write(image, temp2)
+  }
   image_ori_tcl <- tkimage.create("photo", "image_ori_tcl", file = temp2)
   label_digits <- 0
   label_template <- sprintf("%%.%df", label_digits)
@@ -101,7 +115,13 @@ interactive_crop <- function(image, color = "white", return_param = FALSE)
   {
     temp_image <- image_crop(image, geometry_area(temp_val[3], temp_val[4], temp_val[1], temp_val[2]))
     temp_image <- image_composite(blank, temp_image, offset = geometry_point(temp_val[1], temp_val[2]))
-    image_write(temp_image, temp)
+    if (!is_missing_scale)
+    {
+      image_write(image_scale(temp_image, scale), temp)
+    } else
+    {
+      image_write(temp_image, temp)
+    }
     image_tcl <- tkimage.create("photo", "image_tcl", file = temp)
     tkconfigure(win1.frame0.label2, image = image_tcl)
   }

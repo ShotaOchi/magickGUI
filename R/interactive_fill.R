@@ -7,6 +7,7 @@
 #' @param refcolor if set, fuzz color distance will be measured against this color, not the color of the starting point. Any color (within fuzz color distance of the given refcolor), connected to starting point will be replaced with the color. If the pixel at the starting point does not itself match the given refcolor (according to fuzz) then no action will be taken.
 #' @param resolution resolution of slider of fuzz
 #' @param return_param If return_param is TRUE, returns a list values of point and fuzz. If return_param is FALSE, returns a magick image object.
+#' @param scale geometry to be passed to image_scale function of magick package. image is scaled just for preview and result image is not scaled if scale is given.
 #' @return a magick image object or a list of values of point and fuzz
 #' @author Shota Ochi
 #' @export
@@ -14,7 +15,7 @@
 #' \donttest{
 #' interactive_fill(wizard, "black")
 #' }
-interactive_fill <- function(image, color, refcolor = NULL, resolution = 0.1, return_param = FALSE)
+interactive_fill <- function(image, color, refcolor = NULL, resolution = 0.1, return_param = FALSE, scale)
 {
   # image must be convreted into png to avoid the error of tkimage.create function
   image_original <- image
@@ -25,6 +26,7 @@ interactive_fill <- function(image, color, refcolor = NULL, resolution = 0.1, re
   iniy <- 1
   inifuzz <- 0
   initial <- image_fill(image, color, geometry_point(inix, iniy), inifuzz, refcolor)
+  is_missing_scale <- missing(scale)
 
   # set variable range
   iminfo <- image_info(image)
@@ -42,7 +44,13 @@ interactive_fill <- function(image, color, refcolor = NULL, resolution = 0.1, re
   quit_waiting <- !is.null(getOption("unit_test_magickGUI"))
   temp <- tempfile(fileext = ".jpg")
   on.exit(unlink(temp), add = TRUE)
-  image_write(initial, temp)
+  if (!is_missing_scale)
+  {
+    image_write(image_scale(initial, scale), temp)
+  } else
+  {
+    image_write(initial, temp)
+  }
   image_tcl <- tkimage.create("photo", "image_tcl", file = temp)
   label_digits <- -as.integer(log(resolution, 10))
   label_digits <- ifelse(label_digits > 0, label_digits, 0)
@@ -81,7 +89,13 @@ interactive_fill <- function(image, color, refcolor = NULL, resolution = 0.1, re
   update_image <- function()
   {
     temp_image <- image_fill(image, color, geometry_point(temp_val[1], temp_val[2]), temp_val[3], refcolor)
-    image_write(temp_image, temp)
+    if (!is_missing_scale)
+    {
+      image_write(image_scale(temp_image, scale), temp)
+    } else
+    {
+      image_write(temp_image, temp)
+    }
     image_tcl <- tkimage.create("photo", "image_tcl", file = temp)
     tkconfigure(win1.im, image = image_tcl)
   }

@@ -16,6 +16,7 @@
 #' @param range_max_kerning define maximum of kerning in slider. must be positive.
 #' @param resolution resolution of slider
 #' @param return_param If return_param is TRUE, returns a list of values of location, degrees, size, weight, and kerning. If return_param is FALSE, returns a magick image object.
+#' @param scale geometry to be passed to image_scale function of magick package. image is scaled just for preview and result image is not scaled if scale is given.
 #' @return a magick image object or a list of values of location, degrees, size, weight, and kerning
 #' @author Shota Ochi
 #' @export
@@ -23,7 +24,7 @@
 #' \donttest{
 #' interactive_annotate(wizard, "hello")
 #' }
-interactive_annotate <- function(image, text, gravity = "northwest", font = "", style = "normal", decoration = NULL, color = NULL, strokecolor = NULL, boxcolor = NULL, range_max_size = 1000, range_max_weight = 850, range_max_kerning = 300, resolution = 0.1, return_param = FALSE)
+interactive_annotate <- function(image, text, gravity = "northwest", font = "", style = "normal", decoration = NULL, color = NULL, strokecolor = NULL, boxcolor = NULL, range_max_size = 1000, range_max_weight = 850, range_max_kerning = 300, resolution = 0.1, return_param = FALSE, scale)
 {
   # image must be convreted into png to avoid the error of tkimage.create function
   image_original <- image
@@ -37,6 +38,7 @@ interactive_annotate <- function(image, text, gravity = "northwest", font = "", 
   iniweight <- 400
   inikerning <- 0
   initial <- image_annotate(image, text, gravity, geometry_point(inix, iniy), inidegrees, inisize, font, style, iniweight, inikerning, decoration, color, strokecolor, boxcolor)
+  is_missing_scale <- missing(scale)
 
   # set variable range
   iminfo <- image_info(image)
@@ -60,7 +62,13 @@ interactive_annotate <- function(image, text, gravity = "northwest", font = "", 
   quit_waiting <- !is.null(getOption("unit_test_magickGUI"))
   temp <- tempfile(fileext = ".jpg")
   on.exit(unlink(temp), add = TRUE)
-  image_write(initial, temp)
+  if (!is_missing_scale)
+  {
+    image_write(image_scale(initial, scale), temp)
+  } else
+  {
+    image_write(initial, temp)
+  }
   image_tcl <- tkimage.create("photo", "image_tcl", file = temp)
   label_digits <- -as.integer(log(resolution, 10))
   label_digits <- ifelse(label_digits > 0, label_digits, 0)
@@ -122,7 +130,13 @@ interactive_annotate <- function(image, text, gravity = "northwest", font = "", 
   update_image <- function()
   {
     temp_image <- image_annotate(image, text, gravity, geometry_point(temp_val[1], temp_val[2]), temp_val[3], temp_val[4], font, style, temp_val[5], temp_val[6], decoration, color, strokecolor, boxcolor)
-    image_write(temp_image, temp)
+    if (!is_missing_scale)
+    {
+      image_write(image_scale(temp_image, scale), temp)
+    } else
+    {
+      image_write(temp_image, temp)
+    }
     image_tcl <- tkimage.create("photo", "image_tcl", file = temp)
     tkconfigure(win1.im, image = image_tcl)
   }
