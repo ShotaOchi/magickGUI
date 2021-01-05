@@ -116,7 +116,8 @@ interactive_composite <- function(image, composite_image, operator = "atop", com
       error = function(e) assign("wait_test", TRUE, inherits = TRUE)
       )
     }
-    wait_time()
+    wait_time_long()
+    tkdestroy(win1.button)
   }
   tkwm.state(win1, "normal")
   while (TRUE)
