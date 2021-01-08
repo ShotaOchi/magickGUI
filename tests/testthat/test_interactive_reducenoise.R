@@ -1,5 +1,6 @@
 test_that("interactive_reducenoise",
 {
+  skip_on_cran()
   iniv <- 0 # initial value is 0
   names(iniv) <- "radius"
   expected <- image_reducenoise(img, iniv)

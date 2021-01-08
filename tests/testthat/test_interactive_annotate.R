@@ -1,5 +1,6 @@
 test_that("interactive_annotate",
 {
+  skip_on_cran()
   inix <- 0
   iniy <- 0
   inidegrees <- 0

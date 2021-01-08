@@ -1,5 +1,6 @@
 test_that("interactive_crop",
 {
+  skip_on_cran()
   iminfo <- image_info(img)
   iniwidth <- as.integer(iminfo["width"] / 2) + 1
   iniheight <- as.integer(iminfo["height"] / 2) + 1

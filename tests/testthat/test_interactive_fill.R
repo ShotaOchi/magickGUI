@@ -1,5 +1,6 @@
 test_that("interactive_fill",
 {
+  skip_on_cran()
   iniv <- list(point = "+1+1", fuzz = 0)
   color <- "black"
   expected <- image_fill(img, color, iniv[[1]], iniv[[2]])

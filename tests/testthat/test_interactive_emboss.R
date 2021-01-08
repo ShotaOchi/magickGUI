@@ -1,5 +1,6 @@
 test_that("interactive_emboss",
 {
+  skip_on_cran()
   iniv <- c(0,0) # initial value is 0
   names(iniv) <- c("radius", "sigma")
   expected <- image_emboss(img, iniv[1], iniv[2])

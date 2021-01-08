@@ -1,5 +1,6 @@
 test_that("interactive_implode",
 {
+  skip_on_cran()
   iniv <- 0 # initial value is 0
   names(iniv) <- "factor"
   expected <- image_implode(img, iniv)

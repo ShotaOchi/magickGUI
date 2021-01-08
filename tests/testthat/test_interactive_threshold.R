@@ -1,5 +1,6 @@
 test_that("interactive_threshold",
 {
+  skip_on_cran()
   iniv <- "0%" # initial value is "0%"
   names(iniv) <- "threshold"
   expected <- image_threshold(img, threshold = iniv)

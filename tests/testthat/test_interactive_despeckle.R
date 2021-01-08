@@ -1,5 +1,6 @@
 test_that("interactive_despeckle",
 {
+  skip_on_cran()
   iniv <- 0 # initial value is 0
   names(iniv) <- "times"
   expected <- image_despeckle(img, iniv)
