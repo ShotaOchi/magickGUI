@@ -15,6 +15,9 @@ jobs:
     runs-on: macOS-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      unit_test_magickGUI: true
+      _R_CHECK_DONTTEST_EXAMPLES_: false
+      NOT_CRAN: true
     steps:
       - uses: actions/checkout@v2
 
