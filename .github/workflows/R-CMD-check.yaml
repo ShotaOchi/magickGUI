@@ -50,7 +50,8 @@ jobs:
       - name: Set DISPLAY on Linux
         if: runner.os == 'Linux'
         run: |
-          export DISPLAY=:99.0
+          Xvfb :99 -screen 0 1024x768x24
+          export DISPLAY=:99
 
       - name: Query dependencies
         run: |
