@@ -50,8 +50,7 @@ jobs:
       - name: Use xvfb on Linux
         if: runner.os == 'Linux'
         run: |
-          export DISPLAY=:99
-          Xvfb :99 -screen 0 1024x768x24 &
+          "export DISPLAY=:99.0"
 
       - name: Query dependencies
         run: |
