@@ -47,10 +47,10 @@ jobs:
         run: |
           brew install --cask xquartz
 
-      - name: Use xvfb on Linux
+      - name: Set DISPLAY on Linux
         if: runner.os == 'Linux'
         run: |
-          "export DISPLAY=:99.0"
+          export DISPLAY=:99.0
 
       - name: Query dependencies
         run: |
