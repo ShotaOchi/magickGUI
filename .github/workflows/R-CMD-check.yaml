@@ -80,13 +80,13 @@ jobs:
           remotes::install_deps(dependencies = TRUE, type = "source")
           remotes::install_cran("rcmdcheck")
         shell: Rscript {0}
-        
+
       - name: Use xvfb on Linux and MacOS
         if: runner.os != 'Windows'
         run: |
-          export DISPLAY=':99.0'
-          Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-        
+          Xvfb :99 &
+          export DISPLAY=:99
+
       - name: Check
         env:
           _R_CHECK_CRAN_INCOMING_REMOTE_: false
