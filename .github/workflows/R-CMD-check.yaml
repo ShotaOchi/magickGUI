@@ -41,10 +41,7 @@ jobs:
           r-version: ${{ matrix.config.r }}
 
       - uses: r-lib/actions/setup-pandoc@v1
-      
-      - name: Use xvfb on Linux
-        uses: GabrielBB/xvfb-action@v1
-      
+
       - name: Install X11 dependencies on MacOS
         if: runner.os == 'macOS'
         run: |
@@ -80,12 +77,14 @@ jobs:
         shell: Rscript {0}
 
       - name: Check
-        env:
-          _R_CHECK_CRAN_INCOMING_REMOTE_: false
-        run: |
-          options(crayon.enabled = TRUE)
-          rcmdcheck::rcmdcheck(args = c("--no-manual", "--as-cran"), error_on = "warning", check_dir = "check")
-        shell: Rscript {0}
+        uses: GabrielBB/xvfb-action@v1
+        with:
+          env:
+            _R_CHECK_CRAN_INCOMING_REMOTE_: false
+          run: |
+            options(crayon.enabled = TRUE)
+            rcmdcheck::rcmdcheck(args = c("--no-manual", "--as-cran"), error_on = "warning", check_dir = "check")
+          shell: Rscript {0}
 
       - name: Upload check results
         if: failure()
