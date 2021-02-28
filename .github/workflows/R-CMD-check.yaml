@@ -42,16 +42,13 @@ jobs:
 
       - uses: r-lib/actions/setup-pandoc@v1
       
+      - name: Use xvfb on Linux
+        uses: GabrielBB/xvfb-action@v1
+      
       - name: Install X11 dependencies on MacOS
         if: runner.os == 'macOS'
         run: |
           brew install --cask xquartz
-
-      - name: Set DISPLAY on Linux
-        if: runner.os == 'Linux'
-        run: |
-          Xvfb :99 -screen 0 1024x768x24 &
-          export DISPLAY=:99
 
       - name: Query dependencies
         run: |
