@@ -47,17 +47,10 @@ jobs:
         run: |
           brew install --cask xquartz
  
-      - name: Install imagemagick and ghostscript on MacOS
+      - name: Install imagemagick on MacOS
         if: runner.os == 'macOS'
         run: |
           brew install imagemagick
-          brew install ghostscript
-
-      - name: Install imagemagick and ghosscript on Linux
-        if: runner.os == 'Linux'
-        run: |
-          sudo apt install imagemagick
-          sudo apt install ghostscript
 
       - name: Query dependencies
         run: |
@@ -87,6 +80,12 @@ jobs:
           remotes::install_deps(dependencies = TRUE, type = "source")
           remotes::install_cran("rcmdcheck")
         shell: Rscript {0}
+        
+      - name: Use xvfb on Linux and MacOS
+        if: runner.os != 'Windows'
+        run: |
+          export DISPLAY=':99.0'
+          Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
         
       - name: Check
         env:

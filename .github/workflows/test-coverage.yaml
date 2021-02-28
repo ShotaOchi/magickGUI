@@ -30,6 +30,11 @@ jobs:
         run: |
           brew install --cask xquartz
 
+      - name: Install imagemagick on MacOS
+        if: runner.os == 'macOS'
+        run: |
+          brew install imagemagick
+
       - name: Query dependencies
         run: |
           install.packages('remotes')
