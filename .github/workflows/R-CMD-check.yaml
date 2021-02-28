@@ -56,12 +56,16 @@ jobs:
       - name: Install Packages on Linux
         if: runner.os == 'Linux'
         run: |
+          sudo apt install libwebp-dev
+          sudo apt install libpoppler-cpp-dev
           sudo apt install libcogl-pango-dev
           sudo apt install libfreetype6-dev
           sudo apt install libfontconfig
           sudo apt install librsvg2-dev
           sudo apt install libcairo2-dev
           sudo apt install ghostscript
+          sudo apt install libtesseract-dev
+          sudo aot install libleptonica-dev
           sudo apt install libmagick++-dev
 
       - name: Query dependencies
