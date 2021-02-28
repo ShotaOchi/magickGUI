@@ -53,10 +53,12 @@ jobs:
         run: |
           brew install imagemagick
           
-      - name: Install libmagick++-dev, ghostscript, and pango on Linux
+      - name: Install Packages on Linux
         if: runner.os == 'Linux'
         run: |
-          sudo apt install pango
+          sudo apt install libcogl-pango-dev
+          sudo apt install libfreetype6-dev
+          sudo apt install libfontconfig
           sudo apt install ghostscript
           sudo apt install libmagick++-dev
 
