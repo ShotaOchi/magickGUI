@@ -51,7 +51,7 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           brew install imagemagick
-          brew install ghost script
+          brew install ghostscript
 
       - name: Install imagemagick and ghosscript on Linux
         if: runner.os == 'Linux'
