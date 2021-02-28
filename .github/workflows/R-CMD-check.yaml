@@ -56,7 +56,11 @@ jobs:
       - name: Install Packages on Linux
         if: runner.os == 'Linux'
         run: |
+          sudo apt install libcogl-pango-dev
+          sudo apt install libfreetype6-dev
+          sudo apt install libfontconfig
           sudo apt install librsvg2-dev
+          sudo apt install libcairo2-dev
           sudo apt install ghostscript
           sudo apt install libmagick++-dev
 
