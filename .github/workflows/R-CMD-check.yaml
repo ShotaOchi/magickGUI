@@ -46,6 +46,18 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           brew install --cask xquartz
+ 
+      - name: Install imagemagick and ghostscript on MacOS
+        if: runner.os == 'macOS'
+        run: |
+          brew install imagemagick
+          brew install ghost script
+
+      - name: Install imagemagick and ghosscript on Linux
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt install imagemagick
+          sudo apt install ghostscript
 
       - name: Query dependencies
         run: |
