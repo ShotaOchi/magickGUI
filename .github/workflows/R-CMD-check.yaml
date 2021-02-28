@@ -66,6 +66,7 @@ jobs:
           sudo apt install ghostscript
           sudo apt install libtesseract-dev
           sudo apt install libleptonica-dev
+          sudo apt install gsfonts
           sudo apt install libmagick++-dev
 
       - name: Query dependencies
