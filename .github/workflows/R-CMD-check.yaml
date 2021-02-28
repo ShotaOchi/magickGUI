@@ -32,6 +32,7 @@ jobs:
       unit_test_magickGUI: true
       _R_CHECK_DONTTEST_EXAMPLES_: false
       NOT_CRAN: true
+      DISPLAY: :99
 
     steps:
       - uses: actions/checkout@v2
