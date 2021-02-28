@@ -42,10 +42,11 @@ jobs:
 
       - uses: r-lib/actions/setup-pandoc@v1
 
-      - name: Install X11 dependencies on MacOS
+      - name: Install X11 and tcl-tk dependencies on MacOS
         if: runner.os == 'macOS'
         run: |
           brew install --cask xquartz
+          brew install tcl-tk
 
       - name: Query dependencies
         run: |
@@ -79,12 +80,10 @@ jobs:
       - name: Check
         env:
           _R_CHECK_CRAN_INCOMING_REMOTE_: false
-        uses: GabrielBB/xvfb-action@v1
-        with:
-          run: |
-            options(crayon.enabled = TRUE)
-            rcmdcheck::rcmdcheck(args = c("--no-manual", "--as-cran"), error_on = "warning", check_dir = "check")
-          shell: Rscript {0}
+        run: |
+          options(crayon.enabled = TRUE)
+          rcmdcheck::rcmdcheck(args = c("--no-manual", "--as-cran"), error_on = "warning", check_dir = "check")
+        shell: Rscript {0}
 
       - name: Upload check results
         if: failure()
