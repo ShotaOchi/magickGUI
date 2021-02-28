@@ -52,6 +52,12 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           brew install imagemagick
+          
+      - name: Install libmagick++-dev and ghostscript on Linux
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt install ghostscript
+          sudo apt install libmagick++-dev
 
       - name: Query dependencies
         run: |
