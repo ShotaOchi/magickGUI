@@ -46,7 +46,7 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           brew install --cask xquartz
-          brew install tcl-tk
+          brew reinstall tcl-tk
 
       - name: Query dependencies
         run: |
