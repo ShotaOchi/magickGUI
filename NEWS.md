@@ -1,5 +1,11 @@
 # magickGUI
 
+## magickGUI 1.3.0
+
+### New Functions
+
+* interactive_shade
+
 ## magickGUI 1.2.2
 
 * skip unit tests on CRAN
