@@ -58,7 +58,7 @@ interactive_shade <- function(image, color = FALSE, range_max_azimuth, range_min
   # make initial output
   iniv_azimuth <- as.integer((range_max_azimuth + range_min_azimuth) / 2)
   iniv_elevation <- as.integer((range_max_elevation + range_min_elevation) / 2)
-  initial <- image_shade(image, iniv_azimuth, iniv_elevation)
+  initial <- image_shade(image, iniv_azimuth, iniv_elevation, color)
 
   # set variable range
   range_azimuth <- c(range_min_azimuth, range_max_azimuth)
@@ -102,7 +102,7 @@ interactive_shade <- function(image, color = FALSE, range_max_azimuth, range_min
   temp_val <- c(iniv_azimuth, iniv_elevation)
   update_image <- function()
   {
-    temp_image <- image_shade(image, temp_val[1], temp_val[2])
+    temp_image <- image_shade(image, temp_val[1], temp_val[2], color)
     image_write(temp_image, temp)
     image_tcl <- tkimage.create("photo", "image_tcl", file = temp)
     tkconfigure(win1.im, image = image_tcl)
@@ -162,5 +162,5 @@ interactive_shade <- function(image, color = FALSE, range_max_azimuth, range_min
   {
     return(val_res)
   }
-  return(image_shade(image_original, val_res[1], val_res[2]))
+  return(image_shade(image_original, val_res[1], val_res[2], color))
 }
