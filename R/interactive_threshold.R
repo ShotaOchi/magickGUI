@@ -1,7 +1,7 @@
 #' interactive thresholding
 #'
 #' Using image_threshold of 'magick' interactively.
-#' type and channel are parameters of image_threshold. See reference manual of 'magick' for detail.
+#' threshold is a parameter of image_threshold. See reference manual of 'magick' for detail.
 #' @param image a magick image object
 #' @param type type of thresholding, either one of lat, black or white
 #' @param channel a value specifying which channel(s) to set

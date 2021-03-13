@@ -19,7 +19,7 @@ interactive_crop(image, color = "white", return_param = FALSE, scale)
 a magick image object or a value of geometry.
 }
 \description{
-Using image_crop of 'magick' interactively.
+Using image_crop of 'magick' interactively. geometry is a parameter of image_crop. See reference manual of 'magick' for detail.
 }
 \examples{
 \donttest{

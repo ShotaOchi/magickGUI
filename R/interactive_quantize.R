@@ -1,7 +1,7 @@
 #' interactive quantization
 #'
 #' Using image_quantize of 'magick' interactively.
-#' max, colorspace, dither, and treedepth are parameters of image_quantize. See reference manual of 'magick' for detail.
+#' max is a parameter of image_quantize. See reference manual of 'magick' for detail.
 #' @param image a magick image object
 #' @param colorspace specify colorspace. for example, "rgb", "gray", or "cmyk".
 #' @param dither apply Floyd/Steinberg error diffusion to the image

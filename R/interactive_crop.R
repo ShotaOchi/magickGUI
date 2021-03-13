@@ -1,6 +1,6 @@
 #' interactive cropping
 #'
-#' Using image_crop of 'magick' interactively.
+#' Using image_crop of 'magick' interactively. geometry is a parameter of image_crop. See reference manual of 'magick' for detail.
 #' @param image a magick image object
 #' @param color color of background. a valid color string such as "navyblue" or "#000080". "none" is not allowed.
 #' @param return_param If return_param is TRUE, returns a value of geometry. If return_param is FALSE, returns a magick image object.

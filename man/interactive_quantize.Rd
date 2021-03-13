@@ -37,7 +37,7 @@ a magick image object or value of max
 }
 \description{
 Using image_quantize of 'magick' interactively.
-max, colorspace, dither, and treedepth are parameters of image_quantize. See reference manual of 'magick' for detail.
+max is a parameter of image_quantize. See reference manual of 'magick' for detail.
 }
 \examples{
 \donttest{

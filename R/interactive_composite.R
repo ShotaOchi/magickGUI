@@ -1,7 +1,7 @@
 #' interactive image compositing
 #'
 #' Using image_composite of 'magick' interactively.
-#' operator, compose_args, and offset are parameters of image_composite. see reference manual of 'magick' for detail.
+#' offset is a parameter of image_composite. see reference manual of 'magick' for detail.
 #' @param image a magick image object
 #' @param composite_image composition image
 #' @param operator string with a composite operator

@@ -34,7 +34,7 @@ magick a image object or values of offset
 }
 \description{
 Using image_composite of 'magick' interactively.
-operator, compose_args, and offset are parameters of image_composite. see reference manual of 'magick' for detail.
+offset is a parameter of image_composite. see reference manual of 'magick' for detail.
 }
 \examples{
 \donttest{

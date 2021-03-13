@@ -9,7 +9,7 @@
 #' @param resolution resolution of slider
 #' @param return_param If return_param is TRUE, returns values of brightness and saturation and hue. If return_param is FALSE, returns a magick image object.
 #' @param scale geometry to be passed to image_scale function of magick package. image is scaled just for preview and result image is not scaled if scale is given.
-#' @return a magick image object or values of brightness and saturation
+#' @return a magick image object or values of brightness, saturation, and hue
 #' @author Shota Ochi
 #' @export
 #' @examples

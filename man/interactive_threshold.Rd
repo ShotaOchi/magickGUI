@@ -31,7 +31,7 @@ a magick image object or threshold value
 }
 \description{
 Using image_threshold of 'magick' interactively.
-type and channel are parameters of image_threshold. See reference manual of 'magick' for detail.
+threshold is a parameter of image_threshold. See reference manual of 'magick' for detail.
 }
 \examples{
 \donttest{
