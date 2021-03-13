@@ -69,7 +69,7 @@ interactive_blur <- function(image, range_max_radius = 5, range_max_sigma = 5, r
   }
   win1.frame1.slider <- tkscale(win1.frame1, from = range_radius[1], to = range_radius[2], variable = slider_value_radius, orient = "horizontal", length = length_slider, command = command_slider_radius, resolution = resolution, showvalue = 0)
   win1.frame2.slider <- tkscale(win1.frame2, from = range_sigma[1], to = range_sigma[2], variable = slider_value_sigma, orient = "horizontal", length = length_slider, command = command_slider_sigma, resolution = resolution, showvalue = 0)
-  temp_val <- iniv
+  temp_val <- c(iniv, iniv)
   update_image <- function()
   {
     temp_image <- image_blur(image, temp_val[1], temp_val[2])
