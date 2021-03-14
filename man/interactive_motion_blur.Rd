@@ -6,8 +6,8 @@
 \usage{
 interactive_motion_blur(
   image,
-  range_max_radius = 200,
-  range_max_sigma = 200,
+  range_max_radius = 100,
+  range_max_sigma = 100,
   range_max_angle = 360,
   resolution = 0.1,
   return_param = FALSE,
