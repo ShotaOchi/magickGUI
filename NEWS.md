@@ -4,6 +4,7 @@
 
 ### New Functions
 
+* interactive_motion_blur
 * interactive_shade
 
 ## magickGUI 1.2.2
