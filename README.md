@@ -7,31 +7,7 @@
 
 ## Note
 
-### Functions of magickGUI package may fail to recognize magick-image object
-
-There are two solutions.
-
-One is to update magickGUI package.
-```
-devtools::install_github("ShotaOchi/magickGUI")
-```
-
-Another is to convert a magick-image object into png.
-```
-library(magickGUI)
-a <- image_read("test.jpg") %>% image_convert(format = "png")
-interactive_reducenoise(a)
-```
-
-### Functions of magickGUI package doesn't work on R 4.0.1 for Windows
-
-magickGUI doesn't work on R 4.0.1 for Windows although magickGUI works fine on R 4.0.2 for Windows.
-
-It's CRAN's fault.
-
-I can do nothing about it.
-
-Don't use R 4.0.1 for Windows if you use magickGUI package.
+magickGUI doesn't work on R 4.0.1 for Windows.
 
 ## Purpose
 The purpose of magickGUI is to enable us to use the functions of the package 'magick' interactively.
