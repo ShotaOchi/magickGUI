@@ -3,7 +3,7 @@
 #' magickGUI enables us to use the functions of the package 'magick' interactively.
 #' @docType package
 #' @name magickGUI
-NULL
+"_PACKAGE"
 
 #' @importFrom graphics plot
 #' @importFrom magick geometry_area
