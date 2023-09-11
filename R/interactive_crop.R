@@ -10,7 +10,10 @@
 #' @export
 #' @examples
 #' \donttest{
-#' interactive_crop(wizard)
+#' if (interactive())
+#' {
+#'   interactive_crop(wizard)
+#' }
 #' }
 interactive_crop <- function(image, color = "white", return_param = FALSE, scale)
 {

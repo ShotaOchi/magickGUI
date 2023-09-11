@@ -32,7 +32,10 @@ times is a parameter of image_despeckle. See reference manual of 'magick' for de
 }
 \examples{
 \donttest{
-interactive_despeckle(wizard)
+if (interactive())
+{
+  interactive_despeckle(wizard)
+}
 }
 }
 \author{

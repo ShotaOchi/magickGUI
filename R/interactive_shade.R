@@ -16,7 +16,10 @@
 #' @export
 #' @examples
 #' \donttest{
-#' interactive_shade(wizard)
+#' if (interactive())
+#' {
+#'   interactive_shade(wizard)
+#' }
 #' }
 interactive_shade <- function(image, color = FALSE, range_max_azimuth, range_min_azimuth, range_max_elevation, range_min_elevation, resolution = 0.1, return_param = FALSE, scale)
 {

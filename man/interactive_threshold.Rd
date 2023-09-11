@@ -35,7 +35,10 @@ threshold is a parameter of image_threshold. See reference manual of 'magick' fo
 }
 \examples{
 \donttest{
-interactive_threshold(wizard)
+if (interactive())
+{
+  interactive_threshold(wizard)
+}
 }
 }
 \author{

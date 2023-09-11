@@ -32,7 +32,10 @@ radius is a parameter of image_oilpaint. See reference manual of 'magick' for de
 }
 \examples{
 \donttest{
-interactive_oilpaint(wizard)
+if (interactive())
+{
+  interactive_oilpaint(wizard)
+}
 }
 }
 \author{

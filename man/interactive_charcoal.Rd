@@ -35,7 +35,10 @@ radius and sigma are parameters of image_charcoal. See reference manual of 'magi
 }
 \examples{
 \donttest{
-interactive_charcoal(wizard)
+if (interactive())
+{
+  interactive_charcoal(wizard)
+}
 }
 }
 \author{

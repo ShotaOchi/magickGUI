@@ -44,7 +44,10 @@ azimuth and elevation are parameters of image_shade. See reference manual of 'ma
 }
 \examples{
 \donttest{
-interactive_shade(wizard)
+if (interactive())
+{
+  interactive_shade(wizard)
+}
 }
 }
 \author{

@@ -38,7 +38,10 @@ offset is a parameter of image_composite. see reference manual of 'magick' for d
 }
 \examples{
 \donttest{
-interactive_composite(wizard, rose)
+if (interactive())
+{
+  interactive_composite(wizard, rose)
+}
 }
 }
 \author{

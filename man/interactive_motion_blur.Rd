@@ -38,7 +38,10 @@ radius and sigma and angle are parameters of image_motion_blur. See reference ma
 }
 \examples{
 \donttest{
-interactive_motion_blur(wizard)
+if (interactive())
+{
+  interactive_motion_blur(wizard)
+}
 }
 }
 \author{

@@ -35,7 +35,10 @@ radius, sigma, lower\%, and upper\% are parameters of image_canny. See reference
 }
 \examples{
 \donttest{
-interactive_canny(wizard)
+if (interactive())
+{
+  interactive_canny(wizard)
+}
 }
 }
 \author{

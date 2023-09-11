@@ -13,7 +13,10 @@
 #' @export
 #' @examples
 #' \donttest{
-#' interactive_fill(wizard, "black")
+#' if (interactive())
+#' {
+#'   interactive_fill(wizard, "black")
+#' }
 #' }
 interactive_fill <- function(image, color, refcolor = NULL, resolution = 0.1, return_param = FALSE, scale)
 {

@@ -32,7 +32,10 @@ radius is a parameter of image_reducenoise. See reference manual of 'magick' for
 }
 \examples{
 \donttest{
-interactive_reducenoise(wizard)
+if (interactive())
+{
+  interactive_reducenoise(wizard)
+}
 }
 }
 \author{

@@ -12,7 +12,10 @@
 #' @export
 #' @examples
 #' \donttest{
-#' interactive_despeckle(wizard)
+#' if (interactive())
+#' {
+#'   interactive_despeckle(wizard)
+#' }
 #' }
 interactive_despeckle <- function(image, range_max = 50, resolution = 1, return_param = FALSE, scale)
 {

@@ -14,7 +14,10 @@
 #' @export
 #' @examples
 #' \donttest{
-#' interactive_modulate(wizard)
+#' if (interactive())
+#' {
+#'   interactive_modulate(wizard)
+#' }
 #' }
 interactive_modulate <- function(image, range_max_brightness = 200, range_max_saturation = 200, range_max_hue = 200, resolution = 0.1, return_param = FALSE, scale)
 {

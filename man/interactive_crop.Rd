@@ -23,7 +23,10 @@ Using image_crop of 'magick' interactively. geometry is a parameter of image_cro
 }
 \examples{
 \donttest{
-interactive_crop(wizard)
+if (interactive())
+{
+  interactive_crop(wizard)
+}
 }
 }
 \author{

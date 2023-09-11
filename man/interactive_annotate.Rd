@@ -62,7 +62,10 @@ location, degrees, size, weight, and kerning are parameters of image_annotate. S
 }
 \examples{
 \donttest{
-interactive_annotate(wizard, "hello")
+if (interactive())
+{
+  interactive_annotate(wizard, "hello")
+}
 }
 }
 \author{

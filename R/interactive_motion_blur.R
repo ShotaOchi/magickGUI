@@ -14,7 +14,10 @@
 #' @export
 #' @examples
 #' \donttest{
-#' interactive_motion_blur(wizard)
+#' if (interactive())
+#' {
+#'   interactive_motion_blur(wizard)
+#' }
 #' }
 interactive_motion_blur <- function(image, range_max_radius = 100, range_max_sigma = 100, range_max_angle = 360, resolution = 0.1, return_param = FALSE, scale)
 {

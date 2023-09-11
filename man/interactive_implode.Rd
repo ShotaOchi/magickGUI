@@ -32,7 +32,10 @@ factor is a parameter of image_implode. See reference manual of 'magick' for det
 }
 \examples{
 \donttest{
-interactive_implode(wizard)
+if (interactive())
+{
+  interactive_implode(wizard)
+}
 }
 }
 \author{

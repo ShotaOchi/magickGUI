@@ -13,7 +13,10 @@
 #' @export
 #' @examples
 #' \donttest{
-#' interactive_canny(wizard)
+#' if (interactive())
+#' {
+#'   interactive_canny(wizard)
+#' }
 #' }
 interactive_canny <- function(image, range_max_radius = 30, range_max_sigma = 2, resolution = 0.1, return_param = FALSE, scale)
 {

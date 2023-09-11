@@ -38,7 +38,10 @@ brightness and saturation and hue are parameters of image_modulate. See referenc
 }
 \examples{
 \donttest{
-interactive_modulate(wizard)
+if (interactive())
+{
+  interactive_modulate(wizard)
+}
 }
 }
 \author{

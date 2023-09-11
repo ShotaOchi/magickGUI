@@ -13,7 +13,10 @@
 #' @export
 #' @examples
 #' \donttest{
-#' interactive_emboss(wizard)
+#' if (interactive())
+#' {
+#'   interactive_emboss(wizard)
+#' }
 #' }
 interactive_emboss <- function(image, range_max_radius = 5, range_max_sigma = 5, resolution = 0.1, return_param = FALSE, scale)
 {

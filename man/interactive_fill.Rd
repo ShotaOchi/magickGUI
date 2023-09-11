@@ -35,7 +35,10 @@ point and fuzz are parameters of image_fill. See reference manual of 'magick' fo
 }
 \examples{
 \donttest{
-interactive_fill(wizard, "black")
+if (interactive())
+{
+  interactive_fill(wizard, "black")
+}
 }
 }
 \author{

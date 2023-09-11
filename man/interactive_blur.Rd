@@ -35,7 +35,10 @@ radius and sigma are parameters of image_blur. See reference manual of 'magick' 
 }
 \examples{
 \donttest{
-interactive_blur(wizard)
+if (interactive())
+{
+  interactive_blur(wizard)
+}
 }
 }
 \author{

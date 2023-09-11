@@ -35,7 +35,10 @@ radius and sigma are parameters of image_emboss. See reference manual of 'magick
 }
 \examples{
 \donttest{
-interactive_emboss(wizard)
+if (interactive())
+{
+  interactive_emboss(wizard)
+}
 }
 }
 \author{

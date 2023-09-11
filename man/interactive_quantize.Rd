@@ -41,7 +41,10 @@ max is a parameter of image_quantize. See reference manual of 'magick' for detai
 }
 \examples{
 \donttest{
-interactive_quantize(wizard)
+if (interactive())
+{
+  interactive_quantize(wizard)
+}
 }
 }
 \author{
